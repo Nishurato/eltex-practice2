@@ -188,3 +188,161 @@ remote: Compressing objects: 100% (18/18), done.
 remote: Total 19 (delta 1), reused 13 (delta 0), pack-reused 0 (from 0)
 Receiving objects: 100% (19/19), 148.04 KiB | 522.00 KiB/s, done.
 Resolving deltas: 100% (1/1), done.
+root@eltex-practice2-pg1-v2:~/eltex-practice2_clone# cd ~/eltex-practice2
+root@eltex-practice2-pg1-v2:~/eltex-practice2# git add .
+root@eltex-practice2-pg1-v2:~/eltex-practice2# git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   module1/task2/practice2_eltex-pg1-v2_part3.log
+
+root@eltex-practice2-pg1-v2:~/eltex-practice2# git commit -m "Внесено изменение отчета"                                 [main f763124] Внесено изменение отчета
+ 1 file changed, 53 insertions(+)
+
+root@eltex-practice2-pg1-v2:~/eltex-practice2# git pull origin main --rebase
+remote: Enumerating objects: 8, done.
+remote: Counting objects: 100% (8/8), done.
+remote: Compressing objects: 100% (5/5), done.
+remote: Total 5 (delta 1), reused 0 (delta 0), pack-reused 0 (from 0)
+Unpacking objects: 100% (5/5), 110.51 KiB | 394.00 KiB/s, done.
+From https://github.com/Nishurato/eltex-practice2
+ * branch            main       -> FETCH_HEAD
+   5b0bb19..ebff01b  main       -> origin/main
+Successfully rebased and updated refs/heads/main.
+root@eltex-practice2-pg1-v2:~/eltex-practice2# git push
+Enumerating objects: 9, done.
+Counting objects: 100% (9/9), done.
+Delta compression using up to 2 threads
+Compressing objects: 100% (5/5), done.
+Writing objects: 100% (5/5), 1.29 KiB | 1.29 MiB/s, done.
+Total 5 (delta 2), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+To https://github.com/Nishurato/eltex-practice2.git
+   ebff01b..dce03ae  main -> main
+root@eltex-practice2-pg1-v2:~/eltex-practice2# cd ~/eltex-practice2_clone/
+root@eltex-practice2-pg1-v2:~/eltex-practice2_clone# cd eltex-practice2/
+root@eltex-practice2-pg1-v2:~/eltex-practice2_clone/eltex-practice2# git fetch
+remote: Enumerating objects: 9, done.
+remote: Counting objects: 100% (9/9), done.
+remote: Compressing objects: 100% (3/3), done.
+remote: Total 5 (delta 2), reused 5 (delta 2), pack-reused 0 (from 0)
+Unpacking objects: 100% (5/5), 1.28 KiB | 653.00 KiB/s, done.
+From https://github.com/Nishurato/eltex-practice2
+   ebff01b..dce03ae  main       -> origin/main
+root@eltex-practice2-pg1-v2:~/eltex-practice2_clone/eltex-practice2# git log origin/main
+commit dce03ae574fa5f8aa3c97f0c1a6a37921eb433b8 (origin/main, origin/HEAD)
+Author: Nishurato <maxim.anikeev0505@gmail.com>
+Date:   Mon Oct 27 11:34:14 2025 +0000
+
+    Внесено изменение отчета
+
+commit ebff01bbcf1a1cdafcbf388ae450f6072a1bfec4 (HEAD -> main)
+Author: Maksim Anikeev <maxim.anikeev0505@gmail.com>
+Date:   Mon Oct 27 18:06:06 2025 +0700
+
+    Ещё один файл от первой практики
+
+commit 5b0bb19f29ae029c93153f678b8432a2877c5808
+Author: Nishurato <maxim.anikeev0505@gmail.com>
+Date:   Mon Oct 27 11:04:45 2025 +0000
+
+    Practice files loaded
+
+commit 01a6701605d35f7fbc204fa2357de98e37efadb3
+Author: Nishurato <maxim.anikeev0505@gmail.com>
+Date:   Mon Oct 27 10:11:42 2025 +0000
+
+    first commit
+root@eltex-practice2-pg1-v2:~/eltex-practice2_clone/eltex-practice2# git diff main origin/main
+diff --git a/module1/task2/practice2_eltex-pg1-v2_part3.log b/module1/task2/practice2_eltex-pg1-v2_part3.log
+index b54ba36..e3061e7 100644
+--- a/module1/task2/practice2_eltex-pg1-v2_part3.log
++++ b/module1/task2/practice2_eltex-pg1-v2_part3.log
+@@ -135,3 +135,56 @@ branch 'main' set up to track 'origin/main'.
+ root@eltex-practice2-pg1-v2:~/eltex-practice2# mkdir -p module1/task1
+ root@eltex-practice2-pg1-v2:~/eltex-practice2# mkdir module1/task2
+ root@eltex-practice2-pg1-v2:~/eltex-practice2# mkdir module1/task3
++eltex-pg1-v2@eltex-2025-autumn-17:39>scp eltex-pg1-v2_part.log root@172.16.9.176:~/eltex-practice2/module1/task1/eltex-1-v2_part.log
++eltex-pg1-v2_part.log                         100%  661    40.9KB/s   00:00
++eltex-pg1-v2@eltex-2025-autumn-17:39>scp eltex-pg1-v2_part3.log root@172.16.9.176:/root/eltex-practice2/module1/task1/eex-pg1-v2_part3.log
++eltex-pg1-v2_part3.log                        100%  388    45.6KB/s   00:00
++eltex-pg1-v2@eltex-2025-autumn-17:43>scp eltex-pg1-v2_part3_gt50M.log root@172.16.9.176:/root/eltex-practice2/module1/tk1/eltex-pg1-v2_part3_gt50M.log
++eltex-pg1-v2_part3_gt50M.log                  100% 3313   164.2KB/s   00:00
++eltex-pg1-v2@eltex-2025-autumn-17:49>scp practice2_eltex-pg1-v2_part1.log root@172.16.9.176:/root/eltex-practice2/modul/task2/practice2_eltex-pg1-v2_part1.log
++practice2_eltex-pg1-v2_part1.log              100% 3366     9.0MB/s   00:00
++eltex-pg1-v2@eltex-2025-autumn-17:55>scp practice2_eltex-pg1-v2_part2.log root@172.16.9.176:/root/eltex-practice2/modul/task2/practice2_eltex-pg1-v2_part2.log
++practice2_eltex-pg1-v2_part2.log              100%  146KB  89.0MB/s   00:00
++eltex-pg1-v2@eltex-2025-autumn-17:56>scp practice2_eltex-pg1-v2_part3.log root@172.16.9.176:/root/eltex-practice2/modul/task2/practice2_eltex-pg1-v2_part3.log
++practice2_eltex-pg1-v2_part3.log              100% 5893    11.2MB/s   00:00
++root@eltex-practice2-pg1-v2:~/eltex-practice2# git add .
++root@eltex-practice2-pg1-v2:~/eltex-practice2# git status
++On branch main
++Your branch is up to date with 'origin/main'.
++
++Changes to be committed:
++  (use "git restore --staged <file>..." to unstage)
++        new file:   module1/task1/eltex-pg1-v2_part.log
++        new file:   module1/task1/eltex-pg1-v2_part3.log
++        new file:   module1/task1/eltex-pg1-v2_part3_gt50M.log
++        new file:   module1/task2/practice2_eltex-pg1-v2_part1.log
++        new file:   module1/task2/practice2_eltex-pg1-v2_part2.log
++        new file:   module1/task2/practice2_eltex-pg1-v2_part3.log
++
++root@eltex-practice2-pg1-v2:~/eltex-practice2# git commit -m "Practice files loaded"
++[main 5b0bb19] Practice files loaded
++ 6 files changed, 1745 insertions(+)
++ create mode 100644 module1/task1/eltex-pg1-v2_part.log
++ create mode 100644 module1/task1/eltex-pg1-v2_part3.log
++ create mode 100644 module1/task1/eltex-pg1-v2_part3_gt50M.log
+
+[1]+  Stopped                 git diff main origin/main
+root@eltex-practice2-pg1-v2:~/eltex-practice2_clone/eltex-practice2# git merge
+Updating ebff01b..dce03ae
+Fast-forward
+ module1/task2/practice2_eltex-pg1-v2_part3.log | 53 +++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 53 insertions(+)
+root@eltex-practice2-pg1-v2:~/eltex-practice2_clone# cd
+root@eltex-practice2-pg1-v2:~# mkdir ~/eltex_practice2_copy && cd ~/eltex_practice2_copy
+root@eltex-practice2-pg1-v2:~/eltex_practice2_copy# echo "# Это git-репозитория Аникеева Максима Ваидомвича, созданный в рамках школы Eltex" >> README.md
+root@eltex-practice2-pg1-v2:~/eltex_practice2_copy# git init
+hint: Using 'master' as the name for the initial branch. This default branch name
+hint: is subject to change. To configure the initial branch name to use in all
+hint: of your new repositories, which will suppress this warning, call:
+hint:
+hint:   git config --global init.defaultBranch <name>
+hint:
+hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+hint: 'development'. The just-created branch can be renamed via this command:
+hint:
+hint:   git branch -m <name>
+Initialized empty Git repository in /root/eltex_practice2_copy/.git/
+root@eltex-practice2-pg1-v2:~/eltex_practice2_copy# git add README.md
+root@eltex-practice2-pg1-v2:~/eltex_practice2_copy# git commit -m "first commit"
+[master (root-commit) 69ad2f0] first commit
+ 1 file changed, 1 insertion(+)
+ create mode 100644 README.md
+root@eltex-practice2-pg1-v2:~/eltex_practice2_copy# git branch -M main
+root@eltex-practice2-pg1-v2:~/eltex_practice2_copy# git remote add origin https://github.com/Nishurato/eltex-practice2.git
+root@eltex-practice2-pg1-v2:~/eltex_practice2_copy# git status
+On branch main
+nothing to commit, working tree clean
+root@eltex-practice2-pg1-v2:~/eltex_practice2_copy# git push -u origin main
+To https://github.com/Nishurato/eltex-practice2.git
+ ! [rejected]        main -> main (fetch first)
+error: failed to push some refs to 'https://github.com/Nishurato/eltex-practice2.git'
+hint: Updates were rejected because the remote contains work that you do not
+hint: have locally. This is usually caused by another repository pushing to
+hint: the same ref. If you want to integrate the remote changes, use
+hint: 'git pull' before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+root@eltex-practice2-pg1-v2:~/eltex_practice2_copy# ^[[200~mkdir -p module1/task1
+mkdir: command not found
+root@eltex-practice2-pg1-v2:~/eltex_practice2_copy# mkdir -p module1/task1
+root@eltex-practice2-pg1-v2:~/eltex_practice2_copy# mkdir module1/task2
+root@eltex-practice2-pg1-v2:~/eltex_practice2_copy# mkdir module1/task3
+root@eltex-practice2-pg1-v2:~/eltex_practice2_copy# git add .
+root@eltex-practice2-pg1-v2:~/eltex_practice2_copy# git status
+On branch main
+nothing to commit, working tree clean
