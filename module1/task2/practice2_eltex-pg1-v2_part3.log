@@ -135,3 +135,56 @@ branch 'main' set up to track 'origin/main'.
 root@eltex-practice2-pg1-v2:~/eltex-practice2# mkdir -p module1/task1
 root@eltex-practice2-pg1-v2:~/eltex-practice2# mkdir module1/task2
 root@eltex-practice2-pg1-v2:~/eltex-practice2# mkdir module1/task3
+eltex-pg1-v2@eltex-2025-autumn-17:39>scp eltex-pg1-v2_part.log root@172.16.9.176:~/eltex-practice2/module1/task1/eltex-pg1-v2_part.log
+eltex-pg1-v2_part.log                         100%  661    40.9KB/s   00:00
+eltex-pg1-v2@eltex-2025-autumn-17:39>scp eltex-pg1-v2_part3.log root@172.16.9.176:/root/eltex-practice2/module1/task1/eltex-pg1-v2_part3.log
+eltex-pg1-v2_part3.log                        100%  388    45.6KB/s   00:00
+eltex-pg1-v2@eltex-2025-autumn-17:43>scp eltex-pg1-v2_part3_gt50M.log root@172.16.9.176:/root/eltex-practice2/module1/task1/eltex-pg1-v2_part3_gt50M.log
+eltex-pg1-v2_part3_gt50M.log                  100% 3313   164.2KB/s   00:00
+eltex-pg1-v2@eltex-2025-autumn-17:49>scp practice2_eltex-pg1-v2_part1.log root@172.16.9.176:/root/eltex-practice2/module1/task2/practice2_eltex-pg1-v2_part1.log
+practice2_eltex-pg1-v2_part1.log              100% 3366     9.0MB/s   00:00
+eltex-pg1-v2@eltex-2025-autumn-17:55>scp practice2_eltex-pg1-v2_part2.log root@172.16.9.176:/root/eltex-practice2/module1/task2/practice2_eltex-pg1-v2_part2.log
+practice2_eltex-pg1-v2_part2.log              100%  146KB  89.0MB/s   00:00
+eltex-pg1-v2@eltex-2025-autumn-17:56>scp practice2_eltex-pg1-v2_part3.log root@172.16.9.176:/root/eltex-practice2/module1/task2/practice2_eltex-pg1-v2_part3.log
+practice2_eltex-pg1-v2_part3.log              100% 5893    11.2MB/s   00:00
+root@eltex-practice2-pg1-v2:~/eltex-practice2# git add .
+root@eltex-practice2-pg1-v2:~/eltex-practice2# git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   module1/task1/eltex-pg1-v2_part.log
+        new file:   module1/task1/eltex-pg1-v2_part3.log
+        new file:   module1/task1/eltex-pg1-v2_part3_gt50M.log
+        new file:   module1/task2/practice2_eltex-pg1-v2_part1.log
+        new file:   module1/task2/practice2_eltex-pg1-v2_part2.log
+        new file:   module1/task2/practice2_eltex-pg1-v2_part3.log
+
+root@eltex-practice2-pg1-v2:~/eltex-practice2# git commit -m "Practice files loaded"
+[main 5b0bb19] Practice files loaded
+ 6 files changed, 1745 insertions(+)
+ create mode 100644 module1/task1/eltex-pg1-v2_part.log
+ create mode 100644 module1/task1/eltex-pg1-v2_part3.log
+ create mode 100644 module1/task1/eltex-pg1-v2_part3_gt50M.log
+ create mode 100644 module1/task2/practice2_eltex-pg1-v2_part1.log
+ create mode 100644 module1/task2/practice2_eltex-pg1-v2_part2.log
+ create mode 100644 module1/task2/practice2_eltex-pg1-v2_part3.log
+root@eltex-practice2-pg1-v2:~/eltex-practice2# git push
+Enumerating objects: 12, done.
+Counting objects: 100% (12/12), done.
+Delta compression using up to 2 threads
+Compressing objects: 100% (11/11), done.
+Writing objects: 100% (11/11), 37.34 KiB | 12.45 MiB/s, done.
+Total 11 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/Nishurato/eltex-practice2.git
+   01a6701..5b0bb19  main -> main
+root@eltex-practice2-pg1-v2:~/eltex-practice2# mkdir ~/eltex-practice2_clone && cd ~/eltex-practice2_clone
+root@eltex-practice2-pg1-v2:~/eltex-practice2_clone# git clone https://github.com/Nishurato/eltex-practice2.git
+Cloning into 'eltex-practice2'...
+remote: Enumerating objects: 19, done.
+remote: Counting objects: 100% (19/19), done.
+remote: Compressing objects: 100% (18/18), done.
+remote: Total 19 (delta 1), reused 13 (delta 0), pack-reused 0 (from 0)
+Receiving objects: 100% (19/19), 148.04 KiB | 522.00 KiB/s, done.
+Resolving deltas: 100% (1/1), done.
