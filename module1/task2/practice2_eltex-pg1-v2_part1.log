@@ -1,0 +1,52 @@
+root@eltex-practice2-pg1-v2:~# sudo chmod +x /usr/local/bin/showdmesg.sh
+root@eltex-practice2-pg1-v2:~# sudo chown root:user2 /usr/local/bin/showdmesg.sh
+root@eltex-practice2-pg1-v2:~# sudo chmod 4750 /usr/local/bin/showdmesg.sh
+root@eltex-practice2-pg1-v2:~# su user2
+user2@eltex-practice2-pg1-v2:/root$ /usr/local/bin/showdmesg.sh
+[    0.000000] Linux version 6.8.0-55-generic (buildd@lcy02-amd64-095) (x86_64-linux-gnu-gcc-13 (Ubuntu 13.3.0-6ubuntu2~24.04) 13.3.0, GNU ld (GNU Binutils for Ubuntu) 2.42) #57-Ubuntu SMP PREEMPT_DYNAMIC Wed Feb 12 23:42:21 UTC 2025 (Ubuntu 6.8.0-55.57-generic 6.8.12)
+[    0.000000] Command line: BOOT_IMAGE=/vmlinuz-6.8.0-55-generic root=/dev/mapper/ubuntu--vg-ubuntu--lv ro
+[    0.000000] KERNEL supported cpus:
+[    0.000000]   Intel GenuineIntel
+[    0.000000]   AMD AuthenticAMD
+[    0.000000]   Hygon HygonGenuine
+[    0.000000]   Centaur CentaurHauls
+[    0.000000]   zhaoxin   Shanghai
+[    0.000000] BIOS-provided physical RAM map:
+[    0.000000] BIOS-e820: [mem 0x0000000000000000-0x000000000009fbff] usable
+[    0.000000] BIOS-e820: [mem 0x000000000009fc00-0x000000000009ffff] reserved
+[    0.000000] BIOS-e820: [mem 0x00000000000f0000-0x00000000000fffff] reserved
+[    0.000000] BIOS-e820: [mem 0x0000000000100000-0x00000000bffd9fff] usable
+[    0.000000] BIOS-e820: [mem 0x00000000bffda000-0x00000000bfffffff] reserved
+[    0.000000] BIOS-e820: [mem 0x00000000feffc000-0x00000000feffffff] reserved
+user2@eltex-practice2-pg1-v2:/root$ exit
+exit
+root@eltex-practice2-pg1-v2:~# sudo chage -M 10 user1
+root@eltex-practice2-pg1-v2:~# sudo chage -M 10 user2
+root@eltex-practice2-pg1-v2:~# sudo chage -M 10 user3
+root@eltex-practice2-pg1-v2:~# echo Максим Аникеев | sudo tee /etc/motd
+Максим Аникеев
+root@eltex-practice2-pg1-v2:~# rsync -av /etc/ /root/etc_backup
+sent 2,451,033 bytes  received 19,391 bytes  1,646,949.33 bytes/sec
+total size is 2,366,639  speedup is 0.96
+root@eltex-practice2-pg1-v2:~# tar -czf etc_backup.tar.gz -C /root etc_backup
+root@eltex-practice2-pg1-v2:~# tar -cjf etc_backup_bzip2.tar.bz2 -C /root etc_backup
+root@eltex-practice2-pg1-v2:~# tar -cJf etc_backup_7zip.tar.xz -C /root etc_backup
+mv etc_backup.tar.gz etc_backup_gzip.tar.gz
+root@eltex-practice2-pg1-v2:~# ls -lh /root/etc_backup_*
+-rw-r--r-- 1 root root 471K Oct 19 07:09 /root/etc_backup_7zip.tar.xz
+-rw-r--r-- 1 root root 549K Oct 19 07:07 /root/etc_backup_bzip2.tar.bz2
+-rw-r--r-- 1 root root 583K Oct 19 07:04 /root/etc_backup_gzip.tar.gz
+root@eltex-practice2-pg1-v2:~# sudo date +Текущая дата и время: %Y-%m-%d %H:%M:%S | sudo tee /etc/motd
+Текущая дата и время: 2025-10-19 07:27:35
+root@eltex-practice2-pg1-v2:~# rsync -av --delete /etc/ /root/etc_backup/
+sending incremental file list
+./
+motd
+
+sent 69,998 bytes  received 286 bytes  140,568.00 bytes/sec
+total size is 2,366,670  speedup is 33.67
+root@eltex-practice2-pg1-v2:~# sudo tar -czf /root/etc_backup.tar.gz -C /root etc_backup
+root@eltex-practice2-pg1-v2:~# mkdir -p /root/etc_backup_gzip /root/etc_backup_7zip
+root@eltex-practice2-pg1-v2:~# tar -xzf /root/etc_backup_gzip.tar.gz -C /root/etc_backup_gzip
+root@eltex-practice2-pg1-v2:~# tar -xJf /root/etc_backup_7zip.tar.xz -C /root/etc_backup_7zip
+root@eltex-practice2-pg1-v2:~# diff /root/etc_backup_gzip/etc_backup/motd /root/etc_backup_7zip/etc_backup/motd

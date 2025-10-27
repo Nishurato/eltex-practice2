@@ -1,0 +1,1431 @@
+root@eltex-practice2-pg1-v2:~# journalctl -b --output=short-unix --no-pager     | awk 'NR==1{start=}  <= start+20'
+1760514680.211546 localhost kernel: Linux version 6.8.0-55-generic (buildd@lcy02-amd64-095) (x86_64-linux-gnu-gcc-13 (Ubuntu 13.3.0-6ubuntu2~24.04) 13.3.0, GNU ld (GNU Binutils for Ubuntu) 2.42) #57-Ubuntu SMP PREEMPT_DYNAMIC Wed Feb 12 23:42:21 UTC 2025 (Ubuntu 6.8.0-55.57-generic 6.8.12)
+1760514680.211565 localhost kernel: Command line: BOOT_IMAGE=/vmlinuz-6.8.0-55-generic root=/dev/mapper/ubuntu--vg-ubuntu--lv ro
+1760514680.211572 localhost kernel: KERNEL supported cpus:
+1760514680.211578 localhost kernel:   Intel GenuineIntel
+1760514680.211585 localhost kernel:   AMD AuthenticAMD
+1760514680.211687 localhost kernel:   Hygon HygonGenuine
+1760514680.211699 localhost kernel:   Centaur CentaurHauls
+1760514680.211724 localhost kernel:   zhaoxin   Shanghai
+1760514680.211730 localhost kernel: BIOS-provided physical RAM map:
+1760514680.211735 localhost kernel: BIOS-e820: [mem 0x0000000000000000-0x000000000009fbff] usable
+1760514680.211739 localhost kernel: BIOS-e820: [mem 0x000000000009fc00-0x000000000009ffff] reserved
+1760514680.211744 localhost kernel: BIOS-e820: [mem 0x00000000000f0000-0x00000000000fffff] reserved
+1760514680.211748 localhost kernel: BIOS-e820: [mem 0x0000000000100000-0x00000000bffd9fff] usable
+1760514680.211753 localhost kernel: BIOS-e820: [mem 0x00000000bffda000-0x00000000bfffffff] reserved
+1760514680.211758 localhost kernel: BIOS-e820: [mem 0x00000000feffc000-0x00000000feffffff] reserved
+1760514680.211764 localhost kernel: BIOS-e820: [mem 0x00000000fffc0000-0x00000000ffffffff] reserved
+1760514680.211769 localhost kernel: BIOS-e820: [mem 0x0000000100000000-0x000000013fffffff] usable
+1760514680.211774 localhost kernel: BIOS-e820: [mem 0x000000fd00000000-0x000000ffffffffff] reserved
+1760514680.211778 localhost kernel: NX (Execute Disable) protection: active
+1760514680.211782 localhost kernel: APIC: Static calls initialized
+1760514680.211797 localhost kernel: SMBIOS 2.8 present.
+1760514680.211803 localhost kernel: DMI: QEMU Standard PC (i440FX + PIIX, 1996), BIOS rel-1.16.3-0-ga6ed6b701f0a-prebuilt.qemu.org 04/01/2014
+1760514680.211807 localhost kernel: Hypervisor detected: KVM
+1760514680.211812 localhost kernel: kvm-clock: Using msrs 4b564d01 and 4b564d00
+1760514680.211816 localhost kernel: kvm-clock: using sched offset of 688280049193 cycles
+1760514680.211820 localhost kernel: clocksource: kvm-clock: mask: 0xffffffffffffffff max_cycles: 0x1cd42e4dffb, max_idle_ns: 881590591483 ns
+1760514680.211825 localhost kernel: tsc: Detected 3399.996 MHz processor
+1760514680.211830 localhost kernel: e820: update [mem 0x00000000-0x00000fff] usable ==> reserved
+1760514680.211834 localhost kernel: e820: remove [mem 0x000a0000-0x000fffff] usable
+1760514680.211839 localhost kernel: AGP: No AGP bridge found
+1760514680.211845 localhost kernel: last_pfn = 0x140000 max_arch_pfn = 0x400000000
+1760514680.211849 localhost kernel: MTRR map: 4 entries (3 fixed + 1 variable; max 19), built from 8 variable MTRRs
+1760514680.211854 localhost kernel: x86/PAT: Configuration [0-7]: WB  WC  UC- UC  WB  WP  UC- WT
+1760514680.211858 localhost kernel: last_pfn = 0xbffda max_arch_pfn = 0x400000000
+1760514680.211863 localhost kernel: found SMP MP-table at [mem 0x000f5450-0x000f545f]
+1760514680.211867 localhost kernel: RAMDISK: [mem 0x2fccd000-0x33e5dfff]
+1760514680.211871 localhost kernel: ACPI: Early table checksum verification disabled
+1760514680.211883 localhost kernel: ACPI: RSDP 0x00000000000F5250 000014 (v00 BOCHS )
+1760514680.211888 localhost kernel: ACPI: RSDT 0x00000000BFFE3C25 000038 (v01 BOCHS  BXPC     00000001 BXPC 00000001)
+1760514680.211893 localhost kernel: ACPI: FACP 0x00000000BFFE3A07 000074 (v01 BOCHS  BXPC     00000001 BXPC 00000001)
+1760514680.211899 localhost kernel: ACPI: DSDT 0x00000000BFFDF040 0049C7 (v01 BOCHS  BXPC     00000001 BXPC 00000001)
+1760514680.211904 localhost kernel: ACPI: FACS 0x00000000BFFDF000 000040
+1760514680.211908 localhost kernel: ACPI: APIC 0x00000000BFFE3A7B 000080 (v03 BOCHS  BXPC     00000001 BXPC 00000001)
+1760514680.211913 localhost kernel: ACPI: SSDT 0x00000000BFFE3AFB 0000CA (v01 BOCHS  VMGENID  00000001 BXPC 00000001)
+1760514680.211919 localhost kernel: ACPI: HPET 0x00000000BFFE3BC5 000038 (v01 BOCHS  BXPC     00000001 BXPC 00000001)
+1760514680.211923 localhost kernel: ACPI: WAET 0x00000000BFFE3BFD 000028 (v01 BOCHS  BXPC     00000001 BXPC 00000001)
+1760514680.211927 localhost kernel: ACPI: Reserving FACP table memory at [mem 0xbffe3a07-0xbffe3a7a]
+1760514680.211932 localhost kernel: ACPI: Reserving DSDT table memory at [mem 0xbffdf040-0xbffe3a06]
+1760514680.211936 localhost kernel: ACPI: Reserving FACS table memory at [mem 0xbffdf000-0xbffdf03f]
+1760514680.211941 localhost kernel: ACPI: Reserving APIC table memory at [mem 0xbffe3a7b-0xbffe3afa]
+1760514680.211945 localhost kernel: ACPI: Reserving SSDT table memory at [mem 0xbffe3afb-0xbffe3bc4]
+1760514680.211949 localhost kernel: ACPI: Reserving HPET table memory at [mem 0xbffe3bc5-0xbffe3bfc]
+1760514680.211953 localhost kernel: ACPI: Reserving WAET table memory at [mem 0xbffe3bfd-0xbffe3c24]
+1760514680.211958 localhost kernel: No NUMA configuration found
+1760514680.211974 localhost kernel: Faking a node at [mem 0x0000000000000000-0x000000013fffffff]
+1760514680.211978 localhost kernel: NODE_DATA(0) allocated [mem 0x13ffd2000-0x13fffcfff]
+1760514680.211984 localhost kernel: Zone ranges:
+1760514680.211989 localhost kernel:   DMA      [mem 0x0000000000001000-0x0000000000ffffff]
+1760514680.211993 localhost kernel:   DMA32    [mem 0x0000000001000000-0x00000000ffffffff]
+1760514680.211997 localhost kernel:   Normal   [mem 0x0000000100000000-0x000000013fffffff]
+1760514680.212001 localhost kernel:   Device   empty
+1760514680.212005 localhost kernel: Movable zone start for each node
+1760514680.212009 localhost kernel: Early memory node ranges
+1760514680.212014 localhost kernel:   node   0: [mem 0x0000000000001000-0x000000000009efff]
+1760514680.212019 localhost kernel:   node   0: [mem 0x0000000000100000-0x00000000bffd9fff]
+1760514680.212023 localhost kernel:   node   0: [mem 0x0000000100000000-0x000000013fffffff]
+1760514680.212028 localhost kernel: Initmem setup node 0 [mem 0x0000000000001000-0x000000013fffffff]
+1760514680.212032 localhost kernel: On node 0, zone DMA: 1 pages in unavailable ranges
+1760514680.212037 localhost kernel: On node 0, zone DMA: 97 pages in unavailable ranges
+1760514680.212041 localhost kernel: On node 0, zone Normal: 38 pages in unavailable ranges
+1760514680.212046 localhost kernel: ACPI: PM-Timer IO Port: 0x608
+1760514680.212050 localhost kernel: ACPI: LAPIC_NMI (acpi_id[0xff] dfl dfl lint[0x1])
+1760514680.212329 localhost kernel: IOAPIC[0]: apic_id 0, version 17, address 0xfec00000, GSI 0-23
+1760514680.212346 localhost kernel: ACPI: INT_SRC_OVR (bus 0 bus_irq 0 global_irq 2 dfl dfl)
+1760514680.212351 localhost kernel: ACPI: INT_SRC_OVR (bus 0 bus_irq 5 global_irq 5 high level)
+1760514680.212356 localhost kernel: ACPI: INT_SRC_OVR (bus 0 bus_irq 9 global_irq 9 high level)
+1760514680.212365 localhost kernel: ACPI: INT_SRC_OVR (bus 0 bus_irq 10 global_irq 10 high level)
+1760514680.212369 localhost kernel: ACPI: INT_SRC_OVR (bus 0 bus_irq 11 global_irq 11 high level)
+1760514680.212374 localhost kernel: ACPI: Using ACPI (MADT) for SMP configuration information
+1760514680.212378 localhost kernel: ACPI: HPET id: 0x8086a201 base: 0xfed00000
+1760514680.212384 localhost kernel: smpboot: Allowing 2 CPUs, 0 hotplug CPUs
+1760514680.212388 localhost kernel: kvm-guest: APIC: eoi() replaced with kvm_guest_apic_eoi_write()
+1760514680.212392 localhost kernel: PM: hibernation: Registered nosave memory: [mem 0x00000000-0x00000fff]
+1760514680.212397 localhost kernel: PM: hibernation: Registered nosave memory: [mem 0x0009f000-0x0009ffff]
+1760514680.212401 localhost kernel: PM: hibernation: Registered nosave memory: [mem 0x000a0000-0x000effff]
+1760514680.212406 localhost kernel: PM: hibernation: Registered nosave memory: [mem 0x000f0000-0x000fffff]
+1760514680.212411 localhost kernel: PM: hibernation: Registered nosave memory: [mem 0xbffda000-0xbfffffff]
+1760514680.212415 localhost kernel: PM: hibernation: Registered nosave memory: [mem 0xc0000000-0xfeffbfff]
+1760514680.212419 localhost kernel: PM: hibernation: Registered nosave memory: [mem 0xfeffc000-0xfeffffff]
+1760514680.212424 localhost kernel: PM: hibernation: Registered nosave memory: [mem 0xff000000-0xfffbffff]
+1760514680.212428 localhost kernel: PM: hibernation: Registered nosave memory: [mem 0xfffc0000-0xffffffff]
+1760514680.212454 localhost kernel: [mem 0xc0000000-0xfeffbfff] available for PCI devices
+1760514680.212460 localhost kernel: Booting paravirtualized kernel on KVM
+1760514680.212465 localhost kernel: clocksource: refined-jiffies: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 1910969940391419 ns
+1760514680.212469 localhost kernel: setup_percpu: NR_CPUS:8192 nr_cpumask_bits:2 nr_cpu_ids:2 nr_node_ids:1
+1760514680.212501 localhost kernel: percpu: Embedded 86 pages/cpu s229376 r8192 d114688 u1048576
+1760514680.212507 localhost kernel: pcpu-alloc: s229376 r8192 d114688 u1048576 alloc=1*2097152
+1760514680.212512 localhost kernel: pcpu-alloc: [0] 0 1
+1760514680.212516 localhost kernel: kvm-guest: PV spinlocks enabled
+1760514680.212520 localhost kernel: PV qspinlock hash table entries: 256 (order: 0, 4096 bytes, linear)
+1760514680.212525 localhost kernel: Kernel command line: BOOT_IMAGE=/vmlinuz-6.8.0-55-generic root=/dev/mapper/ubuntu--vg-ubuntu--lv ro
+1760514680.212529 localhost kernel: Unknown kernel command line parameters BOOT_IMAGE=/vmlinuz-6.8.0-55-generic, will be passed to user space.
+1760514680.212534 localhost kernel: Dentry cache hash table entries: 524288 (order: 10, 4194304 bytes, linear)
+1760514680.212540 localhost kernel: Inode-cache hash table entries: 262144 (order: 9, 2097152 bytes, linear)
+1760514680.212545 localhost kernel: Fallback order for Node 0: 0
+1760514680.212549 localhost kernel: Built 1 zonelists, mobility grouping on.  Total pages: 1031898
+1760514680.212575 localhost kernel: Policy zone: Normal
+1760514680.212585 localhost kernel: mem auto-init: stack:all(zero), heap alloc:on, heap free:off
+1760514680.212591 localhost kernel: AGP: Checking aperture...
+1760514680.212595 localhost kernel: AGP: No AGP bridge found
+1760514680.212600 localhost kernel: software IO TLB: area num 2.
+1760514680.212605 localhost kernel: Memory: 3933488K/4193760K available (22528K kernel code, 4443K rwdata, 14344K rodata, 4988K init, 4716K bss, 260012K reserved, 0K cma-reserved)
+1760514680.212610 localhost kernel: SLUB: HWalign=64, Order=0-3, MinObjects=0, CPUs=2, Nodes=1
+1760514680.212614 localhost kernel: ftrace: allocating 58006 entries in 227 pages
+1760514680.212619 localhost kernel: ftrace: allocated 227 pages with 5 groups
+1760514680.212626 localhost kernel: Dynamic Preempt: voluntary
+1760514680.212630 localhost kernel: rcu: Preemptible hierarchical RCU implementation.
+1760514680.212635 localhost kernel: rcu:         RCU restricting CPUs from NR_CPUS=8192 to nr_cpu_ids=2.
+1760514680.212642 localhost kernel:         Trampoline variant of Tasks RCU enabled.
+1760514680.212647 localhost kernel:         Rude variant of Tasks RCU enabled.
+1760514680.212652 localhost kernel:         Tracing variant of Tasks RCU enabled.
+1760514680.212656 localhost kernel: rcu: RCU calculated value of scheduler-enlistment delay is 100 jiffies.
+1760514680.212661 localhost kernel: rcu: Adjusting geometry for rcu_fanout_leaf=16, nr_cpu_ids=2
+1760514680.212665 localhost kernel: NR_IRQS: 524544, nr_irqs: 440, preallocated irqs: 16
+1760514680.212669 localhost kernel: rcu: srcu_init: Setting srcu_struct sizes based on contention.
+1760514680.212674 localhost kernel: Console: colour dummy device 80x25
+1760514680.212679 localhost kernel: printk: legacy console [tty0] enabled
+1760514680.212685 localhost kernel: ACPI: Core revision 20230628
+1760514680.212689 localhost kernel: clocksource: hpet: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 19112604467 ns
+1760514680.212695 localhost kernel: APIC: Switch to symmetric I/O mode setup
+1760514680.212702 localhost kernel: x2apic enabled
+1760514680.212710 localhost kernel: APIC: Switched APIC routing to: physical x2apic
+1760514680.212717 localhost kernel: ..TIMER: vector=0x30 apic1=0 pin1=2 apic2=-1 pin2=-1
+1760514680.212722 localhost kernel: tsc: Marking TSC unstable due to TSCs unsynchronized
+1760514680.212727 localhost kernel: Calibrating delay loop (skipped) preset value.. 6799.99 BogoMIPS (lpj=3399996)
+1760514680.212731 localhost kernel: process: using AMD E400 aware idle routine
+1760514680.212735 localhost kernel: Last level iTLB entries: 4KB 512, 2MB 255, 4MB 127
+1760514680.212740 localhost kernel: Last level dTLB entries: 4KB 512, 2MB 255, 4MB 127, 1GB 0
+1760514680.212746 localhost kernel: Spectre V1 : Mitigation: usercopy/swapgs barriers and __user pointer sanitization
+1760514680.212750 localhost kernel: Spectre V2 : Mitigation: Retpolines
+1760514680.212755 localhost kernel: Spectre V2 : Spectre v2 / SpectreRSB mitigation: Filling RSB on context switch
+1760514680.212759 localhost kernel: Spectre V2 : Spectre v2 / SpectreRSB : Filling RSB on VMEXIT
+1760514680.212763 localhost kernel: x86/fpu: x87 FPU will use FXSAVE
+1760514680.212768 localhost kernel: Freeing SMP alternatives memory: 48K
+1760514680.212772 localhost kernel: pid_max: default: 32768 minimum: 301
+1760514680.212776 localhost kernel: LSM: initializing lsm=lockdown,capability,landlock,yama,apparmor,integrity
+1760514680.212780 localhost kernel: landlock: Up and running.
+1760514680.212784 localhost kernel: Yama: becoming mindful.
+1760514680.212789 localhost kernel: AppArmor: AppArmor initialized
+1760514680.212794 localhost kernel: Mount-cache hash table entries: 8192 (order: 4, 65536 bytes, linear)
+1760514680.212799 localhost kernel: Mountpoint-cache hash table entries: 8192 (order: 4, 65536 bytes, linear)
+1760514680.212804 localhost kernel: smpboot: CPU0: AMD QEMU Virtual CPU version 2.5+ (family: 0xf, model: 0x6b, stepping: 0x1)
+1760514680.212808 localhost kernel: RCU Tasks: Setting shift to 1 and lim to 1 rcu_task_cb_adjust=1 rcu_task_cpu_ids=2.
+1760514680.212812 localhost kernel: RCU Tasks Rude: Setting shift to 1 and lim to 1 rcu_task_cb_adjust=1 rcu_task_cpu_ids=2.
+1760514680.212819 localhost kernel: RCU Tasks Trace: Setting shift to 1 and lim to 1 rcu_task_cb_adjust=1 rcu_task_cpu_ids=2.
+1760514680.212827 localhost kernel: Performance Events: AMD PMU driver.
+1760514680.212835 localhost kernel: ... version:                0
+1760514680.212840 localhost kernel: ... bit width:              48
+1760514680.212845 localhost kernel: ... generic registers:      4
+1760514680.212849 localhost kernel: ... value mask:             0000ffffffffffff
+1760514680.212853 localhost kernel: ... max period:             00007fffffffffff
+1760514680.212859 localhost kernel: ... fixed-purpose events:   0
+1760514680.212863 localhost kernel: ... event mask:             000000000000000f
+1760514680.212868 localhost kernel: signal: max sigframe size: 1440
+1760514680.212874 localhost kernel: rcu: Hierarchical SRCU implementation.
+1760514680.212883 localhost kernel: rcu:         Max phase no-delay instances is 400.
+1760514680.212890 localhost kernel: smp: Bringing up secondary CPUs ...
+1760514680.212898 localhost kernel: smpboot: x86: Booting SMP configuration:
+1760514680.212905 localhost kernel: .... node  #0, CPUs:      #1
+1760514680.212913 localhost kernel: smp: Brought up 1 node, 2 CPUs
+1760514680.212920 localhost kernel: smpboot: Max logical packages: 1
+1760514680.212928 localhost kernel: smpboot: Total of 2 processors activated (13599.98 BogoMIPS)
+1760514680.212934 localhost kernel: devtmpfs: initialized
+1760514680.212941 localhost kernel: x86/mm: Memory block size: 128MB
+1760514680.212946 localhost kernel: clocksource: jiffies: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 1911260446275000 ns
+1760514680.212950 localhost kernel: futex hash table entries: 512 (order: 3, 32768 bytes, linear)
+1760514680.212954 localhost kernel: pinctrl core: initialized pinctrl subsystem
+1760514680.212958 localhost kernel: PM: RTC time: 07:51:16, date: 2025-10-15
+1760514680.212963 localhost kernel: NET: Registered PF_NETLINK/PF_ROUTE protocol family
+1760514680.212967 localhost kernel: DMA: preallocated 512 KiB GFP_KERNEL pool for atomic allocations
+1760514680.212971 localhost kernel: DMA: preallocated 512 KiB GFP_KERNEL|GFP_DMA pool for atomic allocations
+1760514680.212976 localhost kernel: DMA: preallocated 512 KiB GFP_KERNEL|GFP_DMA32 pool for atomic allocations
+1760514680.212980 localhost kernel: audit: initializing netlink subsys (disabled)
+1760514680.212984 localhost kernel: audit: type=2000 audit(1760514676.033:1): state=initialized audit_enabled=0 res=1
+1760514680.212988 localhost kernel: thermal_sys: Registered thermal governor 'fair_share'
+1760514680.212994 localhost kernel: thermal_sys: Registered thermal governor 'bang_bang'
+1760514680.212998 localhost kernel: thermal_sys: Registered thermal governor 'step_wise'
+1760514680.213003 localhost kernel: thermal_sys: Registered thermal governor 'user_space'
+1760514680.213007 localhost kernel: thermal_sys: Registered thermal governor 'power_allocator'
+1760514680.213011 localhost kernel: EISA bus registered
+1760514680.213016 localhost kernel: cpuidle: using governor ladder
+1760514680.213020 localhost kernel: cpuidle: using governor menu
+1760514680.213024 localhost kernel: acpiphp: ACPI Hot Plug PCI Controller Driver version: 0.5
+1760514680.213028 localhost kernel: PCI: Using configuration type 1 for base access
+1760514680.213033 localhost kernel: kprobes: kprobe jump-optimization is enabled. All kprobes are optimized if possible.
+1760514680.213037 localhost kernel: HugeTLB: registered 2.00 MiB page size, pre-allocated 0 pages
+1760514680.213041 localhost kernel: HugeTLB: 28 KiB vmemmap can be freed for a 2.00 MiB page
+1760514680.213046 localhost kernel: fbcon: Taking over console
+1760514680.213050 localhost kernel: ACPI: Added _OSI(Module Device)
+1760514680.213055 localhost kernel: ACPI: Added _OSI(Processor Device)
+1760514680.213059 localhost kernel: ACPI: Added _OSI(3.0 _SCP Extensions)
+1760514680.213063 localhost kernel: ACPI: Added _OSI(Processor Aggregator Device)
+1760514680.213067 localhost kernel: ACPI: 2 ACPI AML tables successfully acquired and loaded
+1760514680.213071 localhost kernel: ACPI: _OSC evaluation for CPUs failed, trying _PDC
+1760514680.213075 localhost kernel: ACPI: Interpreter enabled
+1760514680.213080 localhost kernel: ACPI: PM: (supports S0 S5)
+1760514680.213084 localhost kernel: ACPI: Using IOAPIC for interrupt routing
+1760514680.213089 localhost kernel: PCI: Using host bridge windows from ACPI; if necessary, use pci=nocrs and report a bug
+1760514680.213096 localhost kernel: PCI: Using E820 reservations for host bridge windows
+1760514680.213106 localhost kernel: ACPI: Enabled 3 GPEs in block 00 to 0F
+1760514680.213111 localhost kernel: ACPI: PCI Root Bridge [PCI0] (domain 0000 [bus 00-ff])
+1760514680.213197 localhost kernel: acpi PNP0A03:00: _OSC: OS supports [ASPM ClockPM Segments MSI EDR HPX-Type3]
+1760514680.213252 localhost kernel: acpi PNP0A03:00: _OSC: not requesting OS control; OS requires [ExtendedConfig ASPM ClockPM MSI]
+1760514680.213312 localhost kernel: acpi PNP0A03:00: fail to add MMCONFIG information, can't access extended configuration space under this bridge
+1760514680.213323 localhost kernel: acpiphp: Slot [3] registered
+1760514680.213329 localhost kernel: acpiphp: Slot [8] registered
+1760514680.213334 localhost kernel: acpiphp: Slot [18] registered
+1760514680.213338 localhost kernel: acpiphp: Slot [4] registered
+1760514680.213342 localhost kernel: acpiphp: Slot [6] registered
+1760514680.213350 localhost kernel: acpiphp: Slot [7] registered
+1760514680.213354 localhost kernel: acpiphp: Slot [9] registered
+1760514680.213358 localhost kernel: acpiphp: Slot [10] registered
+1760514680.213363 localhost kernel: acpiphp: Slot [11] registered
+1760514680.213367 localhost kernel: acpiphp: Slot [12] registered
+1760514680.213372 localhost kernel: acpiphp: Slot [13] registered
+1760514680.213377 localhost kernel: acpiphp: Slot [14] registered
+1760514680.213381 localhost kernel: acpiphp: Slot [15] registered
+1760514680.213385 localhost kernel: acpiphp: Slot [16] registered
+1760514680.213391 localhost kernel: acpiphp: Slot [17] registered
+1760514680.213396 localhost kernel: acpiphp: Slot [19] registered
+1760514680.213401 localhost kernel: acpiphp: Slot [20] registered
+1760514680.213406 localhost kernel: acpiphp: Slot [21] registered
+1760514680.213410 localhost kernel: acpiphp: Slot [22] registered
+1760514680.213414 localhost kernel: acpiphp: Slot [23] registered
+1760514680.213418 localhost kernel: acpiphp: Slot [24] registered
+1760514680.213424 localhost kernel: acpiphp: Slot [25] registered
+1760514680.213428 localhost kernel: acpiphp: Slot [26] registered
+1760514680.213433 localhost kernel: acpiphp: Slot [27] registered
+1760514680.213437 localhost kernel: acpiphp: Slot [28] registered
+1760514680.213441 localhost kernel: acpiphp: Slot [29] registered
+1760514680.213445 localhost kernel: PCI host bridge to bus 0000:00
+1760514680.213591 localhost kernel: pci_bus 0000:00: root bus resource [io  0x0000-0x0cf7 window]
+1760514680.213642 localhost kernel: pci_bus 0000:00: root bus resource [io  0x0d00-0xffff window]
+1760514680.213687 localhost kernel: pci_bus 0000:00: root bus resource [mem 0x000a0000-0x000bffff window]
+1760514680.213729 localhost kernel: pci_bus 0000:00: root bus resource [mem 0xc0000000-0xfebfffff window]
+1760514680.213771 localhost kernel: pci_bus 0000:00: root bus resource [mem 0xc000000000-0xc0a000bfff window]
+1760514680.213811 localhost kernel: pci_bus 0000:00: root bus resource [bus 00-ff]
+1760514680.213875 localhost kernel: pci 0000:00:00.0: [8086:1237] type 00 class 0x060000 conventional PCI endpoint
+1760514680.213934 localhost kernel: pci 0000:00:01.0: [8086:7000] type 00 class 0x060100 conventional PCI endpoint
+1760514680.213991 localhost kernel: pci 0000:00:01.1: [8086:7010] type 00 class 0x010180 conventional PCI endpoint
+1760514680.214048 localhost kernel: pci 0000:00:01.1: BAR 4 [io  0xf0e0-0xf0ef]
+1760514680.214100 localhost kernel: pci 0000:00:01.1: BAR 0 [io  0x01f0-0x01f7]: legacy IDE quirk
+1760514680.214152 localhost kernel: pci 0000:00:01.1: BAR 1 [io  0x03f6]: legacy IDE quirk
+1760514680.214204 localhost kernel: pci 0000:00:01.1: BAR 2 [io  0x0170-0x0177]: legacy IDE quirk
+1760514680.214254 localhost kernel: pci 0000:00:01.1: BAR 3 [io  0x0376]: legacy IDE quirk
+1760514680.214309 localhost kernel: pci 0000:00:01.2: [8086:7020] type 00 class 0x0c0300 conventional PCI endpoint
+1760514680.214359 localhost kernel: pci 0000:00:01.2: BAR 4 [io  0xf0c0-0xf0df]
+1760514680.214412 localhost kernel: pci 0000:00:01.3: [8086:7113] type 00 class 0x068000 conventional PCI endpoint
+1760514680.214462 localhost kernel: pci 0000:00:01.3: quirk: [io  0x0600-0x063f] claimed by PIIX4 ACPI
+1760514680.214536 localhost kernel: pci 0000:00:01.3: quirk: [io  0x0700-0x070f] claimed by PIIX4 SMB
+1760514680.214593 localhost kernel: pci 0000:00:02.0: [1234:1111] type 00 class 0x030000 conventional PCI endpoint
+1760514680.214644 localhost kernel: pci 0000:00:02.0: BAR 0 [mem 0xfd000000-0xfdffffff pref]
+1760514680.214693 localhost kernel: pci 0000:00:02.0: BAR 2 [mem 0xfea50000-0xfea50fff]
+1760514680.214745 localhost kernel: pci 0000:00:02.0: ROM [mem 0xfea40000-0xfea4ffff pref]
+1760514680.214794 localhost kernel: pci 0000:00:02.0: Video device with shadowed ROM at [mem 0x000c0000-0x000dffff]
+1760514680.214844 localhost kernel: pci 0000:00:03.0: [1af4:1002] type 00 class 0x00ff00 conventional PCI endpoint
+1760514680.214896 localhost kernel: pci 0000:00:03.0: BAR 0 [io  0xf000-0xf03f]
+1760514680.214943 localhost kernel: pci 0000:00:03.0: BAR 1 [mem 0xfea51000-0xfea51fff]
+1760514680.215008 localhost kernel: pci 0000:00:03.0: BAR 4 [mem 0xc0a0000000-0xc0a0003fff 64bit pref]
+1760514680.215064 localhost kernel: pci 0000:00:05.0: [1b36:0001] type 01 class 0x060400 conventional PCI bridge
+1760514680.215113 localhost kernel: pci 0000:00:05.0: BAR 0 [mem 0xc000000000-0xc0000000ff 64bit]
+1760514680.215192 localhost kernel: pci 0000:00:05.0: PCI bridge to [bus 01]
+1760514680.216664 localhost kernel: pci 0000:00:05.0:   bridge window [io  0xe000-0xefff]
+1760514680.216737 localhost kernel: pci 0000:00:05.0:   bridge window [mem 0xfe800000-0xfe9fffff]
+1760514680.216819 localhost kernel: pci 0000:00:05.0:   bridge window [mem 0xc080000000-0xc09fffffff 64bit pref]
+1760514680.216878 localhost kernel: pci 0000:00:08.0: [1af4:1003] type 00 class 0x078000 conventional PCI endpoint
+1760514680.216929 localhost kernel: pci 0000:00:08.0: BAR 0 [io  0xf040-0xf07f]
+1760514680.216980 localhost kernel: pci 0000:00:08.0: BAR 1 [mem 0xfea52000-0xfea52fff]
+1760514680.217026 localhost kernel: pci 0000:00:08.0: BAR 4 [mem 0xc0a0004000-0xc0a0007fff 64bit pref]
+1760514680.217076 localhost kernel: pci 0000:00:12.0: [1af4:1000] type 00 class 0x020000 conventional PCI endpoint
+1760514680.217122 localhost kernel: pci 0000:00:12.0: BAR 0 [io  0xf080-0xf0bf]
+1760514680.217168 localhost kernel: pci 0000:00:12.0: BAR 1 [mem 0xfea53000-0xfea53fff]
+1760514680.217220 localhost kernel: pci 0000:00:12.0: BAR 4 [mem 0xc0a0008000-0xc0a000bfff 64bit pref]
+1760514680.217266 localhost kernel: pci 0000:00:12.0: ROM [mem 0xfea00000-0xfea3ffff pref]
+1760514680.217316 localhost kernel: pci 0000:00:1e.0: [1b36:0001] type 01 class 0x060400 conventional PCI bridge
+1760514680.217362 localhost kernel: pci 0000:00:1e.0: BAR 0 [mem 0xc000001000-0xc0000010ff 64bit]
+1760514680.217416 localhost kernel: pci 0000:00:1e.0: PCI bridge to [bus 02]
+1760514680.217465 localhost kernel: pci 0000:00:1e.0:   bridge window [io  0xd000-0xdfff]
+1760514680.217530 localhost kernel: pci 0000:00:1e.0:   bridge window [mem 0xfe600000-0xfe7fffff]
+1760514680.217577 localhost kernel: pci 0000:00:1e.0:   bridge window [mem 0xc060000000-0xc07fffffff 64bit pref]
+1760514680.217630 localhost kernel: pci 0000:00:1f.0: [1b36:0001] type 01 class 0x060400 conventional PCI bridge
+1760514680.217681 localhost kernel: pci 0000:00:1f.0: BAR 0 [mem 0xc000002000-0xc0000020ff 64bit]
+1760514680.217762 localhost kernel: pci 0000:00:1f.0: PCI bridge to [bus 03]
+1760514680.217863 localhost kernel: pci 0000:00:1f.0:   bridge window [io  0xc000-0xcfff]
+1760514680.217955 localhost kernel: pci 0000:00:1f.0:   bridge window [mem 0xfe400000-0xfe5fffff]
+1760514680.218040 localhost kernel: pci 0000:00:1f.0:   bridge window [mem 0xc040000000-0xc05fffffff 64bit pref]
+1760514680.218113 localhost kernel: pci_bus 0000:01: extended config space not accessible
+1760514680.218121 localhost kernel: acpiphp: Slot [1-2] registered
+1760514680.218126 localhost kernel: acpiphp: Slot [0] registered
+1760514680.218130 localhost kernel: acpiphp: Slot [2] registered
+1760514680.218134 localhost kernel: acpiphp: Slot [3-2] registered
+1760514680.218158 localhost kernel: acpiphp: Slot [4-2] registered
+1760514680.218163 localhost kernel: acpiphp: Slot [5] registered
+1760514680.218168 localhost kernel: acpiphp: Slot [6-2] registered
+1760514680.218172 localhost kernel: acpiphp: Slot [7-2] registered
+1760514680.218182 localhost kernel: acpiphp: Slot [8-2] registered
+1760514680.218186 localhost kernel: acpiphp: Slot [9-2] registered
+1760514680.218192 localhost kernel: acpiphp: Slot [10-2] registered
+1760514680.218197 localhost kernel: acpiphp: Slot [11-2] registered
+1760514680.218201 localhost kernel: acpiphp: Slot [12-2] registered
+1760514680.218205 localhost kernel: acpiphp: Slot [13-2] registered
+1760514680.218210 localhost kernel: acpiphp: Slot [14-2] registered
+1760514680.218214 localhost kernel: acpiphp: Slot [15-2] registered
+1760514680.218218 localhost kernel: acpiphp: Slot [16-2] registered
+1760514680.218235 localhost kernel: acpiphp: Slot [17-2] registered
+1760514680.218239 localhost kernel: acpiphp: Slot [18-2] registered
+1760514680.218244 localhost kernel: acpiphp: Slot [19-2] registered
+1760514680.218248 localhost kernel: acpiphp: Slot [20-2] registered
+1760514680.218252 localhost kernel: acpiphp: Slot [21-2] registered
+1760514680.218258 localhost kernel: acpiphp: Slot [22-2] registered
+1760514680.218262 localhost kernel: acpiphp: Slot [23-2] registered
+1760514680.218283 localhost kernel: acpiphp: Slot [24-2] registered
+1760514680.218287 localhost kernel: acpiphp: Slot [25-2] registered
+1760514680.218292 localhost kernel: acpiphp: Slot [26-2] registered
+1760514680.218296 localhost kernel: acpiphp: Slot [27-2] registered
+1760514680.218301 localhost kernel: acpiphp: Slot [28-2] registered
+1760514680.218305 localhost kernel: acpiphp: Slot [29-2] registered
+1760514680.218309 localhost kernel: acpiphp: Slot [30] registered
+1760514680.218313 localhost kernel: acpiphp: Slot [31] registered
+1760514680.218410 localhost kernel: pci 0000:01:01.0: [1af4:1004] type 00 class 0x010000 conventional PCI endpoint
+1760514680.218525 localhost kernel: pci 0000:01:01.0: BAR 0 [io  0xe000-0xe03f]
+1760514680.218633 localhost kernel: pci 0000:01:01.0: BAR 1 [mem 0xfe800000-0xfe800fff]
+1760514680.218734 localhost kernel: pci 0000:01:01.0: BAR 4 [mem 0xc080000000-0xc080003fff 64bit pref]
+1760514680.218808 localhost kernel: pci 0000:00:05.0: PCI bridge to [bus 01]
+1760514680.218877 localhost kernel: pci_bus 0000:02: extended config space not accessible
+1760514680.218884 localhost kernel: acpiphp: Slot [0-2] registered
+1760514680.218893 localhost kernel: acpiphp: Slot [1-3] registered
+1760514680.218897 localhost kernel: acpiphp: Slot [2-2] registered
+1760514680.218902 localhost kernel: acpiphp: Slot [3-3] registered
+1760514680.218906 localhost kernel: acpiphp: Slot [4-3] registered
+1760514680.218910 localhost kernel: acpiphp: Slot [5-2] registered
+1760514680.218914 localhost kernel: acpiphp: Slot [6-3] registered
+1760514680.218921 localhost kernel: acpiphp: Slot [7-3] registered
+1760514680.218926 localhost kernel: acpiphp: Slot [8-3] registered
+1760514680.218930 localhost kernel: acpiphp: Slot [9-3] registered
+1760514680.218934 localhost kernel: acpiphp: Slot [10-3] registered
+1760514680.218939 localhost kernel: acpiphp: Slot [11-3] registered
+1760514680.218943 localhost kernel: acpiphp: Slot [12-3] registered
+1760514680.218947 localhost kernel: acpiphp: Slot [13-3] registered
+1760514680.218955 localhost kernel: acpiphp: Slot [14-3] registered
+1760514680.218960 localhost kernel: acpiphp: Slot [15-3] registered
+1760514680.218964 localhost kernel: acpiphp: Slot [16-3] registered
+1760514680.218973 localhost kernel: acpiphp: Slot [17-3] registered
+1760514680.218978 localhost kernel: acpiphp: Slot [18-3] registered
+1760514680.218982 localhost kernel: acpiphp: Slot [19-3] registered
+1760514680.218986 localhost kernel: acpiphp: Slot [20-3] registered
+1760514680.218990 localhost kernel: acpiphp: Slot [21-3] registered
+1760514680.218995 localhost kernel: acpiphp: Slot [22-3] registered
+1760514680.218999 localhost kernel: acpiphp: Slot [23-3] registered
+1760514680.219003 localhost kernel: acpiphp: Slot [24-3] registered
+1760514680.219010 localhost kernel: acpiphp: Slot [25-3] registered
+1760514680.219018 localhost kernel: acpiphp: Slot [26-3] registered
+1760514680.219024 localhost kernel: acpiphp: Slot [27-3] registered
+1760514680.219032 localhost kernel: acpiphp: Slot [28-3] registered
+1760514680.219038 localhost kernel: acpiphp: Slot [29-3] registered
+1760514680.219042 localhost kernel: acpiphp: Slot [30-2] registered
+1760514680.219046 localhost kernel: acpiphp: Slot [31-2] registered
+1760514680.219099 localhost kernel: pci 0000:00:1e.0: PCI bridge to [bus 02]
+1760514680.219143 localhost kernel: pci_bus 0000:03: extended config space not accessible
+1760514680.219150 localhost kernel: acpiphp: Slot [0-3] registered
+1760514680.219154 localhost kernel: acpiphp: Slot [1-4] registered
+1760514680.219158 localhost kernel: acpiphp: Slot [2-3] registered
+1760514680.219162 localhost kernel: acpiphp: Slot [3-4] registered
+1760514680.219166 localhost kernel: acpiphp: Slot [4-4] registered
+1760514680.219170 localhost kernel: acpiphp: Slot [5-3] registered
+1760514680.219175 localhost kernel: acpiphp: Slot [6-4] registered
+1760514680.219180 localhost kernel: acpiphp: Slot [7-4] registered
+1760514680.219185 localhost kernel: acpiphp: Slot [8-4] registered
+1760514680.219189 localhost kernel: acpiphp: Slot [9-4] registered
+1760514680.219193 localhost kernel: acpiphp: Slot [10-4] registered
+1760514680.219197 localhost kernel: acpiphp: Slot [11-4] registered
+1760514680.219201 localhost kernel: acpiphp: Slot [12-4] registered
+1760514680.219205 localhost kernel: acpiphp: Slot [13-4] registered
+1760514680.219209 localhost kernel: acpiphp: Slot [14-4] registered
+1760514680.219214 localhost kernel: acpiphp: Slot [15-4] registered
+1760514680.219218 localhost kernel: acpiphp: Slot [16-4] registered
+1760514680.219222 localhost kernel: acpiphp: Slot [17-4] registered
+1760514680.219227 localhost kernel: acpiphp: Slot [18-4] registered
+1760514680.219231 localhost kernel: acpiphp: Slot [19-4] registered
+1760514680.219236 localhost kernel: acpiphp: Slot [20-4] registered
+1760514680.219240 localhost kernel: acpiphp: Slot [21-4] registered
+1760514680.219244 localhost kernel: acpiphp: Slot [22-4] registered
+1760514680.219248 localhost kernel: acpiphp: Slot [23-4] registered
+1760514680.219252 localhost kernel: acpiphp: Slot [24-4] registered
+1760514680.219257 localhost kernel: acpiphp: Slot [25-4] registered
+1760514680.219261 localhost kernel: acpiphp: Slot [26-4] registered
+1760514680.219265 localhost kernel: acpiphp: Slot [27-4] registered
+1760514680.219269 localhost kernel: acpiphp: Slot [28-4] registered
+1760514680.219273 localhost kernel: acpiphp: Slot [29-4] registered
+1760514680.219277 localhost kernel: acpiphp: Slot [30-3] registered
+1760514680.219281 localhost kernel: acpiphp: Slot [31-3] registered
+1760514680.219328 localhost kernel: pci 0000:00:1f.0: PCI bridge to [bus 03]
+1760514680.219334 localhost kernel: ACPI: PCI: Interrupt link LNKA configured for IRQ 10
+1760514680.219338 localhost kernel: ACPI: PCI: Interrupt link LNKB configured for IRQ 10
+1760514680.219343 localhost kernel: ACPI: PCI: Interrupt link LNKC configured for IRQ 11
+1760514680.219347 localhost kernel: ACPI: PCI: Interrupt link LNKD configured for IRQ 11
+1760514680.219351 localhost kernel: ACPI: PCI: Interrupt link LNKS configured for IRQ 9
+1760514680.219356 localhost kernel: iommu: Default domain type: Translated
+1760514680.219360 localhost kernel: iommu: DMA domain TLB invalidation policy: lazy mode
+1760514680.219364 localhost kernel: SCSI subsystem initialized
+1760514680.219369 localhost kernel: libata version 3.00 loaded.
+1760514680.219373 localhost kernel: ACPI: bus type USB registered
+1760514680.219377 localhost kernel: usbcore: registered new interface driver usbfs
+1760514680.219381 localhost kernel: usbcore: registered new interface driver hub
+1760514680.219385 localhost kernel: usbcore: registered new device driver usb
+1760514680.219391 localhost kernel: pps_core: LinuxPPS API ver. 1 registered
+1760514680.219395 localhost kernel: pps_core: Software ver. 5.3.6 - Copyright 2005-2007 Rodolfo Giometti <giometti@linux.it>
+1760514680.219399 localhost kernel: PTP clock support registered
+1760514680.219403 localhost kernel: EDAC MC: Ver: 3.0.0
+1760514680.219407 localhost kernel: NetLabel: Initializing
+1760514680.219412 localhost kernel: NetLabel:  domain hash size = 128
+1760514680.219416 localhost kernel: NetLabel:  protocols = UNLABELED CIPSOv4 CALIPSO
+1760514680.219420 localhost kernel: NetLabel:  unlabeled traffic allowed by default
+1760514680.219425 localhost kernel: mctp: management component transport protocol core
+1760514680.219429 localhost kernel: NET: Registered PF_MCTP protocol family
+1760514680.219433 localhost kernel: PCI: Using ACPI for IRQ routing
+1760514680.219438 localhost kernel: PCI: pci_cache_line_size set to 64 bytes
+1760514680.219442 localhost kernel: e820: reserve RAM buffer [mem 0x0009fc00-0x0009ffff]
+1760514680.219446 localhost kernel: e820: reserve RAM buffer [mem 0xbffda000-0xbfffffff]
+1760514680.219524 localhost kernel: pci 0000:00:02.0: vgaarb: setting as boot VGA device
+1760514680.219576 localhost kernel: pci 0000:00:02.0: vgaarb: bridge control possible
+1760514680.219624 localhost kernel: pci 0000:00:02.0: vgaarb: VGA device added: decodes=io+mem,owns=io+mem,locks=none
+1760514680.219630 localhost kernel: vgaarb: loaded
+1760514680.219635 localhost kernel: hpet: 3 channels of 0 reserved for per-cpu timers
+1760514680.219639 localhost kernel: hpet0: at MMIO 0xfed00000, IRQs 2, 8, 0
+1760514680.219643 localhost kernel: hpet0: 3 comparators, 64-bit 100.000000 MHz counter
+1760514680.219647 localhost kernel: clocksource: Switched to clocksource kvm-clock
+1760514680.219652 localhost kernel: VFS: Disk quotas dquot_6.6.0
+1760514680.219656 localhost kernel: VFS: Dquot-cache hash table entries: 512 (order 0, 4096 bytes)
+1760514680.219661 localhost kernel: AppArmor: AppArmor Filesystem Enabled
+1760514680.219665 localhost kernel: pnp: PnP ACPI init
+1760514680.219708 localhost kernel: pnp 00:02: [dma 2]
+1760514680.219717 localhost kernel: pnp: PnP ACPI: found 4 devices
+1760514680.219722 localhost kernel: clocksource: acpi_pm: mask: 0xffffff max_cycles: 0xffffff, max_idle_ns: 2085701024 ns
+1760514680.219726 localhost kernel: NET: Registered PF_INET protocol family
+1760514680.219730 localhost kernel: IP idents hash table entries: 65536 (order: 7, 524288 bytes, linear)
+1760514680.219736 localhost kernel: tcp_listen_portaddr_hash hash table entries: 2048 (order: 3, 32768 bytes, linear)
+1760514680.219740 localhost kernel: Table-perturb hash table entries: 65536 (order: 6, 262144 bytes, linear)
+1760514680.219745 localhost kernel: TCP established hash table entries: 32768 (order: 6, 262144 bytes, linear)
+1760514680.219749 localhost kernel: TCP bind hash table entries: 32768 (order: 8, 1048576 bytes, linear)
+1760514680.219753 localhost kernel: TCP: Hash tables configured (established 32768 bind 32768)
+1760514680.219758 localhost kernel: MPTCP token hash table entries: 4096 (order: 4, 98304 bytes, linear)
+1760514680.219763 localhost kernel: UDP hash table entries: 2048 (order: 4, 65536 bytes, linear)
+1760514680.219767 localhost kernel: UDP-Lite hash table entries: 2048 (order: 4, 65536 bytes, linear)
+1760514680.219771 localhost kernel: NET: Registered PF_UNIX/PF_LOCAL protocol family
+1760514680.219775 localhost kernel: NET: Registered PF_XDP protocol family
+1760514680.219823 localhost kernel: pci 0000:00:05.0: PCI bridge to [bus 01]
+1760514680.219869 localhost kernel: pci 0000:00:05.0:   bridge window [io  0xe000-0xefff]
+1760514680.219915 localhost kernel: pci 0000:00:05.0:   bridge window [mem 0xfe800000-0xfe9fffff]
+1760514680.219960 localhost kernel: pci 0000:00:05.0:   bridge window [mem 0xc080000000-0xc09fffffff 64bit pref]
+1760514680.220005 localhost kernel: pci 0000:00:1e.0: PCI bridge to [bus 02]
+1760514680.220051 localhost kernel: pci 0000:00:1e.0:   bridge window [io  0xd000-0xdfff]
+1760514680.220096 localhost kernel: pci 0000:00:1e.0:   bridge window [mem 0xfe600000-0xfe7fffff]
+1760514680.220141 localhost kernel: pci 0000:00:1e.0:   bridge window [mem 0xc060000000-0xc07fffffff 64bit pref]
+1760514680.220186 localhost kernel: pci 0000:00:1f.0: PCI bridge to [bus 03]
+1760514680.220231 localhost kernel: pci 0000:00:1f.0:   bridge window [io  0xc000-0xcfff]
+1760514680.220278 localhost kernel: pci 0000:00:1f.0:   bridge window [mem 0xfe400000-0xfe5fffff]
+1760514680.220324 localhost kernel: pci 0000:00:1f.0:   bridge window [mem 0xc040000000-0xc05fffffff 64bit pref]
+1760514680.220363 localhost kernel: pci_bus 0000:00: resource 4 [io  0x0000-0x0cf7 window]
+1760514680.220400 localhost kernel: pci_bus 0000:00: resource 5 [io  0x0d00-0xffff window]
+1760514680.220437 localhost kernel: pci_bus 0000:00: resource 6 [mem 0x000a0000-0x000bffff window]
+1760514680.220481 localhost kernel: pci_bus 0000:00: resource 7 [mem 0xc0000000-0xfebfffff window]
+1760514680.220531 localhost kernel: pci_bus 0000:00: resource 8 [mem 0xc000000000-0xc0a000bfff window]
+1760514680.220571 localhost kernel: pci_bus 0000:01: resource 0 [io  0xe000-0xefff]
+1760514680.220610 localhost kernel: pci_bus 0000:01: resource 1 [mem 0xfe800000-0xfe9fffff]
+1760514680.220648 localhost kernel: pci_bus 0000:01: resource 2 [mem 0xc080000000-0xc09fffffff 64bit pref]
+1760514680.220687 localhost kernel: pci_bus 0000:02: resource 0 [io  0xd000-0xdfff]
+1760514680.220727 localhost kernel: pci_bus 0000:02: resource 1 [mem 0xfe600000-0xfe7fffff]
+1760514680.220766 localhost kernel: pci_bus 0000:02: resource 2 [mem 0xc060000000-0xc07fffffff 64bit pref]
+1760514680.220803 localhost kernel: pci_bus 0000:03: resource 0 [io  0xc000-0xcfff]
+1760514680.220842 localhost kernel: pci_bus 0000:03: resource 1 [mem 0xfe400000-0xfe5fffff]
+1760514680.220880 localhost kernel: pci_bus 0000:03: resource 2 [mem 0xc040000000-0xc05fffffff 64bit pref]
+1760514680.220928 localhost kernel: pci 0000:00:01.0: PIIX3: Enabling Passive Release
+1760514680.220976 localhost kernel: pci 0000:00:00.0: Limiting direct PCI/PCI transfers
+1760514680.220983 localhost kernel: ACPI: \_SB_.LNKD: Enabled at IRQ 11
+1760514680.220987 localhost kernel: PCI: CLS 0 bytes, default 64
+1760514680.220992 localhost kernel: PCI-DMA: Using software bounce buffering for IO (SWIOTLB)
+1760514680.220996 localhost kernel: software IO TLB: mapped [mem 0x00000000bbfda000-0x00000000bffda000] (64MB)
+1760514680.221002 localhost kernel: Trying to unpack rootfs image as initramfs...
+1760514680.221006 localhost kernel: Initialise system trusted keyrings
+1760514680.221010 localhost kernel: Key type blacklist registered
+1760514680.221015 localhost kernel: workingset: timestamp_bits=36 max_order=20 bucket_order=0
+1760514680.221019 localhost kernel: zbud: loaded
+1760514680.221023 localhost kernel: squashfs: version 4.0 (2009/01/31) Phillip Lougher
+1760514680.221028 localhost kernel: fuse: init (API version 7.39)
+1760514680.221033 localhost kernel: integrity: Platform Keyring initialized
+1760514680.221037 localhost kernel: integrity: Machine keyring initialized
+1760514680.221041 localhost kernel: Key type asymmetric registered
+1760514680.221045 localhost kernel: Asymmetric key parser 'x509' registered
+1760514680.221050 localhost kernel: Block layer SCSI generic (bsg) driver version 0.4 loaded (major 243)
+1760514680.221055 localhost kernel: io scheduler mq-deadline registered
+1760514680.221103 localhost kernel: shpchp 0000:00:05.0: Requesting control of SHPC hotplug via OSHP (\_SB_.PCI0.S28_)
+1760514680.221149 localhost kernel: shpchp 0000:00:05.0: Requesting control of SHPC hotplug via OSHP (\_SB_.PCI0)
+1760514680.221196 localhost kernel: shpchp 0000:00:05.0: Cannot get control of SHPC hotplug
+1760514680.221242 localhost kernel: shpchp 0000:00:1e.0: Requesting control of SHPC hotplug via OSHP (\_SB_.PCI0.SF0_)
+1760514680.221289 localhost kernel: shpchp 0000:00:1e.0: Requesting control of SHPC hotplug via OSHP (\_SB_.PCI0)
+1760514680.221335 localhost kernel: shpchp 0000:00:1e.0: Cannot get control of SHPC hotplug
+1760514680.221382 localhost kernel: shpchp 0000:00:1f.0: Requesting control of SHPC hotplug via OSHP (\_SB_.PCI0.SF8_)
+1760514680.221428 localhost kernel: shpchp 0000:00:1f.0: Requesting control of SHPC hotplug via OSHP (\_SB_.PCI0)
+1760514680.221534 localhost kernel: shpchp 0000:00:1f.0: Cannot get control of SHPC hotplug
+1760514680.221559 localhost kernel: shpchp: Standard Hot Plug PCI Controller Driver version: 0.4
+1760514680.221565 localhost kernel: input: Power Button as /devices/LNXSYSTM:00/LNXPWRBN:00/input/input0
+1760514680.221570 localhost kernel: ACPI: button: Power Button [PWRF]
+1760514680.221575 localhost kernel: ACPI: \_SB_.LNKC: Enabled at IRQ 10
+1760514680.221581 localhost kernel: ACPI: \_SB_.LNKB: Enabled at IRQ 10
+1760514680.221586 localhost kernel: ACPI: \_SB_.LNKA: Enabled at IRQ 11
+1760514680.221592 localhost kernel: Free page reporting enabled
+1760514680.221597 localhost kernel: Serial: 8250/16550 driver, 32 ports, IRQ sharing enabled
+1760514680.221601 localhost kernel: Linux agpgart interface v0.103
+1760514680.221605 localhost kernel: loop: module loaded
+1760514680.221682 localhost kernel: virtio_scsi virtio3: 2/0/0 default/read/poll queues
+1760514680.221744 localhost kernel: scsi host0: Virtio SCSI HBA
+1760514680.221802 localhost kernel: scsi 0:0:0:0: Direct-Access     QEMU     QEMU HARDDISK    2.5+ PQ: 0 ANSI: 5
+1760514680.221861 localhost kernel: ata_piix 0000:00:01.1: version 2.13
+1760514680.221911 localhost kernel: scsi host1: ata_piix
+1760514680.221958 localhost kernel: scsi host2: ata_piix
+1760514680.221965 localhost kernel: ata1: PATA max MWDMA2 cmd 0x1f0 ctl 0x3f6 bmdma 0xf0e0 irq 14 lpm-pol 0
+1760514680.221970 localhost kernel: ata2: PATA max MWDMA2 cmd 0x170 ctl 0x376 bmdma 0xf0e8 irq 15 lpm-pol 0
+1760514680.221974 localhost kernel: ACPI: bus type drm_connector registered
+1760514680.221980 localhost kernel: tun: Universal TUN/TAP device driver, 1.6
+1760514680.221985 localhost kernel: PPP generic driver version 2.4.2
+1760514680.222037 localhost kernel: uhci_hcd 0000:00:01.2: UHCI Host Controller
+1760514680.222089 localhost kernel: uhci_hcd 0000:00:01.2: new USB bus registered, assigned bus number 1
+1760514680.222136 localhost kernel: uhci_hcd 0000:00:01.2: detected 2 ports
+1760514680.222184 localhost kernel: uhci_hcd 0000:00:01.2: irq 11, io port 0x0000f0c0
+1760514680.222277 localhost kernel: usb usb1: New USB device found, idVendor=1d6b, idProduct=0001, bcdDevice= 6.08
+1760514680.222358 localhost kernel: usb usb1: New USB device strings: Mfr=3, Product=2, SerialNumber=1
+1760514680.222431 localhost kernel: usb usb1: Product: UHCI Host Controller
+1760514680.222542 localhost kernel: usb usb1: Manufacturer: Linux 6.8.0-55-generic uhci_hcd
+1760514680.222621 localhost kernel: usb usb1: SerialNumber: 0000:00:01.2
+1760514680.222681 localhost kernel: hub 1-0:1.0: USB hub found
+1760514680.222735 localhost kernel: hub 1-0:1.0: 2 ports detected
+1760514680.222742 localhost kernel: i8042: PNP: PS/2 Controller [PNP0303:KBD,PNP0f13:MOU] at 0x60,0x64 irq 1,12
+1760514680.222747 localhost kernel: serio: i8042 KBD port at 0x60,0x64 irq 1
+1760514680.222751 localhost kernel: serio: i8042 AUX port at 0x60,0x64 irq 12
+1760514680.222756 localhost kernel: mousedev: PS/2 mouse device common for all mice
+1760514680.222760 localhost kernel: input: AT Translated Set 2 keyboard as /devices/platform/i8042/serio0/input/input1
+1760514680.222804 localhost kernel: rtc_cmos 00:03: RTC can wake from S4
+1760514680.222860 localhost kernel: scsi 0:0:0:0: Attached scsi generic sg0 type 0
+1760514680.222912 localhost kernel: sd 0:0:0:0: Power-on or device reset occurred
+1760514680.222961 localhost kernel: sd 0:0:0:0: [sda] 67108864 512-byte logical blocks: (34.4 GB/32.0 GiB)
+1760514680.222999 localhost kernel: rtc_cmos 00:03: registered as rtc0
+1760514680.223048 localhost kernel: sd 0:0:0:0: [sda] Write Protect is off
+1760514680.223096 localhost kernel: sd 0:0:0:0: [sda] Mode Sense: 63 00 00 08
+1760514680.223145 localhost kernel: sd 0:0:0:0: [sda] Write cache: enabled, read cache: enabled, doesn't support DPO or FUA
+1760514680.223188 localhost kernel: rtc_cmos 00:03: setting system clock to 2025-10-15T07:51:16 UTC (1760514676)
+1760514680.223226 localhost kernel: rtc_cmos 00:03: alarms up to one day, y3k, 242 bytes nvram, hpet irqs
+1760514680.223232 localhost kernel: i2c_dev: i2c /dev entries driver
+1760514680.223238 localhost kernel: device-mapper: core: CONFIG_IMA_DISABLE_HTABLE is disabled. Duplicate IMA measurements will not be recorded in the IMA log.
+1760514680.223243 localhost kernel: device-mapper: uevent: version 1.0.3
+1760514680.223247 localhost kernel: device-mapper: ioctl: 4.48.0-ioctl (2023-03-01) initialised: dm-devel@redhat.com
+1760514680.223297 localhost kernel: platform eisa.0: Probing EISA bus 0
+1760514680.223343 localhost kernel: platform eisa.0: EISA: Cannot allocate resource for mainboard
+1760514680.223385 localhost kernel: platform eisa.0: Cannot allocate resource for EISA slot 1
+1760514680.223427 localhost kernel: platform eisa.0: Cannot allocate resource for EISA slot 2
+1760514680.223469 localhost kernel: platform eisa.0: Cannot allocate resource for EISA slot 3
+1760514680.223532 localhost kernel: platform eisa.0: Cannot allocate resource for EISA slot 4
+1760514680.223579 localhost kernel: platform eisa.0: Cannot allocate resource for EISA slot 5
+1760514680.223621 localhost kernel: platform eisa.0: Cannot allocate resource for EISA slot 6
+1760514680.223663 localhost kernel: platform eisa.0: Cannot allocate resource for EISA slot 7
+1760514680.223705 localhost kernel: platform eisa.0: Cannot allocate resource for EISA slot 8
+1760514680.223746 localhost kernel: platform eisa.0: EISA: Detected 0 cards
+1760514680.223752 localhost kernel: amd_pstate: the _CPC object is not present in SBIOS or ACPI disabled
+1760514680.223756 localhost kernel: ledtrig-cpu: registered to indicate activity on CPUs
+1760514680.223761 localhost kernel: [drm] Initialized simpledrm 1.0.0 20200625 for simple-framebuffer.0 on minor 0
+1760514680.223765 localhost kernel: Console: switching to colour frame buffer device 100x37
+1760514680.223780 localhost kernel: simple-framebuffer simple-framebuffer.0: [drm] fb0: simpledrmdrmfb frame buffer device
+1760514680.223785 localhost kernel: drop_monitor: Initializing network drop monitor service
+1760514680.223791 localhost kernel:  sda: sda1 sda2 sda3
+1760514680.223843 localhost kernel: sd 0:0:0:0: [sda] Attached SCSI disk
+1760514680.223848 localhost kernel: NET: Registered PF_INET6 protocol family
+1760514680.223853 localhost kernel: Freeing initrd memory: 67140K
+1760514680.223857 localhost kernel: Segment Routing with IPv6
+1760514680.223862 localhost kernel: In-situ OAM (IOAM) with IPv6
+1760514680.223866 localhost kernel: NET: Registered PF_PACKET protocol family
+1760514680.223870 localhost kernel: Key type dns_resolver registered
+1760514680.223875 localhost kernel: IPI shorthand broadcast: enabled
+1760514680.223879 localhost kernel: sched_clock: Marking stable (473006869, 715392)->(476098880, -2376619)
+1760514680.223884 localhost kernel: registered taskstats version 1
+1760514680.223888 localhost kernel: Loading compiled-in X.509 certificates
+1760514680.223894 localhost kernel: Loaded X.509 cert 'Build time autogenerated kernel key: e0bedf6fa049a1e09bd65ebab3904f14cdd5bc68'
+1760514680.223898 localhost kernel: Loaded X.509 cert 'Canonical Ltd. Live Patch Signing: 14df34d1a87cf37625abec039ef2bf521249b969'
+1760514680.223903 localhost kernel: Loaded X.509 cert 'Canonical Ltd. Kernel Module Signing: 88f752e560a1e0737e31163a466ad7b70a850c19'
+1760514680.223907 localhost kernel: blacklist: Loading compiled-in revocation X.509 certificates
+1760514680.223912 localhost kernel: Loaded X.509 cert 'Canonical Ltd. Secure Boot Signing: 61482aa2830d0ab2ad5af10b7250da9033ddcef0'
+1760514680.223916 localhost kernel: Loaded X.509 cert 'Canonical Ltd. Secure Boot Signing (2017): 242ade75ac4a15e50d50c84b0d45ff3eae707a03'
+1760514680.223921 localhost kernel: Loaded X.509 cert 'Canonical Ltd. Secure Boot Signing (ESM 2018): 365188c1d374d6b07c3c8f240f8ef722433d6a8b'
+1760514680.223925 localhost kernel: Loaded X.509 cert 'Canonical Ltd. Secure Boot Signing (2019): c0746fd6c5da3ae827864651ad66ae47fe24b3e8'
+1760514680.223930 localhost kernel: Loaded X.509 cert 'Canonical Ltd. Secure Boot Signing (2021 v1): a8d54bbb3825cfb94fa13c9f8a594a195c107b8d'
+1760514680.223934 localhost kernel: Loaded X.509 cert 'Canonical Ltd. Secure Boot Signing (2021 v2): 4cf046892d6fd3c9a5b03f98d845f90851dc6a8c'
+1760514680.223941 localhost kernel: Loaded X.509 cert 'Canonical Ltd. Secure Boot Signing (2021 v3): 100437bb6de6e469b581e61cd66bce3ef4ed53af'
+1760514680.223945 localhost kernel: Loaded X.509 cert 'Canonical Ltd. Secure Boot Signing (Ubuntu Core 2019): c1d57b8f6b743f23ee41f4f7ee292f06eecadfb9'
+1760514680.223950 localhost kernel: Key type .fscrypt registered
+1760514680.223954 localhost kernel: Key type fscrypt-provisioning registered
+1760514680.223958 localhost kernel: cryptd: max_cpu_qlen set to 1000
+1760514680.223963 localhost kernel: ata2: found unknown device (class 0)
+1760514680.223967 localhost kernel: ata2.00: ATAPI: QEMU DVD-ROM, 2.5+, max UDMA/100
+1760514680.224018 localhost kernel: scsi 2:0:0:0: CD-ROM            QEMU     QEMU DVD-ROM     2.5+ PQ: 0 ANSI: 5
+1760514680.224065 localhost kernel: sr 2:0:0:0: [sr0] scsi3-mmc drive: 4x/4x cd/rw xa/form2 tray
+1760514680.224071 localhost kernel: cdrom: Uniform CD-ROM driver Revision: 3.20
+1760514680.224116 localhost kernel: sr 2:0:0:0: Attached scsi CD-ROM sr0
+1760514680.224190 localhost kernel: sr 2:0:0:0: Attached scsi generic sg1 type 5
+1760514680.224236 localhost kernel: SSE version of gcm_enc/dec engaged.
+1760514680.224244 localhost kernel: Key type encrypted registered
+1760514680.224249 localhost kernel: AppArmor: AppArmor sha256 policy hashing enabled
+1760514680.224254 localhost kernel: ima: No TPM chip found, activating TPM-bypass!
+1760514680.224259 localhost kernel: Loading compiled-in module X.509 certificates
+1760514680.224269 localhost kernel: Loaded X.509 cert 'Build time autogenerated kernel key: e0bedf6fa049a1e09bd65ebab3904f14cdd5bc68'
+1760514680.224299 localhost kernel: ima: Allocated hash algorithm: sha256
+1760514680.224312 localhost kernel: ima: No architecture policies found
+1760514680.224319 localhost kernel: evm: Initialising EVM extended attributes:
+1760514680.224325 localhost kernel: evm: security.selinux
+1760514680.224331 localhost kernel: evm: security.SMACK64
+1760514680.224340 localhost kernel: evm: security.SMACK64EXEC
+1760514680.224346 localhost kernel: evm: security.SMACK64TRANSMUTE
+1760514680.224378 localhost kernel: evm: security.SMACK64MMAP
+1760514680.224383 localhost kernel: evm: security.apparmor
+1760514680.224388 localhost kernel: evm: security.ima
+1760514680.224392 localhost kernel: evm: security.capability
+1760514680.224396 localhost kernel: evm: HMAC attrs: 0x1
+1760514680.224401 localhost kernel: PM:   Magic number: 13:232:875
+1760514680.224405 localhost kernel: powernow_k8: Power state transitions not supported
+1760514680.224409 localhost kernel: powernow_k8: Power state transitions not supported
+1760514680.224413 localhost kernel: RAS: Correctable Errors collector initialized.
+1760514680.224417 localhost kernel: clk: Disabling unused clocks
+1760514680.224424 localhost kernel: Freeing unused decrypted memory: 2028K
+1760514680.224429 localhost kernel: Freeing unused kernel image (initmem) memory: 4988K
+1760514680.224433 localhost kernel: Write protecting the kernel read-only data: 38912k
+1760514680.224439 localhost kernel: Freeing unused kernel image (rodata/data gap) memory: 2040K
+1760514680.224601 localhost kernel: usb 1-1: new full-speed USB device number 2 using uhci_hcd
+1760514680.224615 localhost kernel: x86/mm: Checked W+X mappings: passed, no W+X pages found.
+1760514680.224620 localhost kernel: Run /init as init process
+1760514680.224625 localhost kernel:   with arguments:
+1760514680.224630 localhost kernel:     /init
+1760514680.224635 localhost kernel:   with environment:
+1760514680.224642 localhost kernel:     HOME=/
+1760514680.224649 localhost kernel:     TERM=linux
+1760514680.224654 localhost kernel:     BOOT_IMAGE=/vmlinuz-6.8.0-55-generic
+1760514680.224713 localhost kernel: virtio_net virtio2 ens18: renamed from eth0
+1760514680.224721 localhost kernel: FDC 0 is a S82078B
+1760514680.224726 localhost kernel: input: VirtualPS/2 VMware VMMouse as /devices/platform/i8042/serio1/input/input4
+1760514680.224731 localhost kernel: input: VirtualPS/2 VMware VMMouse as /devices/platform/i8042/serio1/input/input3
+1760514680.224736 localhost kernel: Console: switching to colour dummy device 80x25
+1760514680.224799 localhost kernel: bochs-drm 0000:00:02.0: vgaarb: deactivate vga console
+1760514680.224807 localhost kernel: [drm] Found bochs VGA, ID 0xb0c5.
+1760514680.224813 localhost kernel: [drm] Framebuffer size 16384 kB @ 0xfd000000, mmio @ 0xfea50000.
+1760514680.224818 localhost kernel: [drm] Found EDID data blob.
+1760514680.224823 localhost kernel: [drm] Initialized bochs-drm 1.0.0 20130925 for 0000:00:02.0 on minor 0
+1760514680.224830 localhost kernel: fbcon: bochs-drmdrmfb (fb0) is primary device
+1760514680.224834 localhost kernel: Console: switching to colour frame buffer device 160x50
+1760514680.224887 localhost kernel: bochs-drm 0000:00:02.0: [drm] fb0: bochs-drmdrmfb frame buffer device
+1760514680.224974 localhost kernel: usb 1-1: New USB device found, idVendor=0627, idProduct=0001, bcdDevice= 0.00
+1760514680.225059 localhost kernel: usb 1-1: New USB device strings: Mfr=1, Product=3, SerialNumber=10
+1760514680.225137 localhost kernel: usb 1-1: Product: QEMU USB Tablet
+1760514680.225254 localhost kernel: usb 1-1: Manufacturer: QEMU
+1760514680.225344 localhost kernel: usb 1-1: SerialNumber: 28754-0000:00:01.2-1
+1760514680.225353 localhost kernel: hid: raw HID events driver (C) Jiri Kosina
+1760514680.225358 localhost kernel: usbcore: registered new interface driver usbhid
+1760514680.225365 localhost kernel: usbhid: USB HID core driver
+1760514680.225370 localhost kernel: input: QEMU QEMU USB Tablet as /devices/pci0000:00/0000:00:01.2/usb1/1-1/1-1:1.0/0003:0627:0001.0001/input/input5
+1760514680.225437 localhost kernel: hid-generic 0003:0627:0001.0001: input,hidraw0: USB HID v0.01 Mouse [QEMU QEMU USB Tablet] on usb-0000:00:01.2-1/input0
+1760514680.225444 localhost kernel: random: crng init done
+1760514680.225450 localhost kernel: raid6: sse2x4   gen() 18068 MB/s
+1760514680.225455 localhost kernel: raid6: sse2x2   gen()  5255 MB/s
+1760514680.225460 localhost kernel: raid6: sse2x1   gen()  1283 MB/s
+1760514680.225464 localhost kernel: raid6: using algorithm sse2x4 gen() 18068 MB/s
+1760514680.225469 localhost kernel: raid6: .... xor() 3377 MB/s, rmw enabled
+1760514680.225482 localhost kernel: raid6: using ssse3x2 recovery algorithm
+1760514680.225497 localhost kernel: xor: measuring software checksum speed
+1760514680.225502 localhost kernel:    prefetch64-sse  : 32257 MB/sec
+1760514680.225507 localhost kernel:    generic_sse     : 19376 MB/sec
+1760514680.225511 localhost kernel: xor: using function: prefetch64-sse (32257 MB/sec)
+1760514680.225515 localhost kernel: async_tx: api initialized (async)
+1760514680.225520 localhost kernel: workqueue: drm_fb_helper_damage_work hogged CPU for >10000us 4 times, consider switching to WQ_UNBOUND
+1760514680.225525 localhost kernel: Btrfs loaded, zoned=yes, fsverity=yes
+1760514680.225529 localhost kernel: EXT4-fs (dm-0): mounted filesystem 78dfc1ab-05ce-40b9-a2f8-2f3e03168145 ro with ordered data mode. Quota mode: none.
+1760514680.225534 localhost kernel: workqueue: drm_fb_helper_damage_work hogged CPU for >10000us 8 times, consider switching to WQ_UNBOUND
+1760514680.225539 localhost systemd[1]: Inserted module 'autofs4'
+1760514680.225548 localhost systemd[1]: systemd 255.4-1ubuntu8.5 running in system mode (+PAM +AUDIT +SELINUX +APPARMOR +IMA +SMACK +SECCOMP +GCRYPT -GNUTLS +OPENSSL +ACL +BLKID +CURL +ELFUTILS +FIDO2 +IDN2 -IDN +IPTC +KMOD +LIBCRYPTSETUP +LIBFDISK +PCRE2 -PWQUALITY +P11KIT +QRENCODE +TPM2 +BZIP2 +LZ4 +XZ +ZLIB +ZSTD -BPF_FRAMEWORK -XKBCOMMON +UTMP +SYSVINIT default-hierarchy=unified)
+1760514680.225554 localhost systemd[1]: Detected virtualization kvm.
+1760514680.225558 localhost systemd[1]: Detected architecture x86-64.
+1760514680.225563 localhost systemd[1]: No hostname configured, using default hostname.
+1760514680.225568 localhost systemd[1]: Hostname set to <localhost>.
+1760514680.225573 localhost systemd[1]: Queued start job for default target graphical.target.
+1760514680.225578 localhost systemd[1]: Created slice system-modprobe.slice - Slice /system/modprobe.
+1760514680.225584 localhost systemd[1]: Created slice system-systemd\x2dfsck.slice - Slice /system/systemd-fsck.
+1760514680.225589 localhost systemd[1]: Created slice user.slice - User and Session Slice.
+1760514680.225593 localhost systemd[1]: Started systemd-ask-password-wall.path - Forward Password Requests to Wall Directory Watch.
+1760514680.225599 localhost systemd[1]: Set up automount proc-sys-fs-binfmt_misc.automount - Arbitrary Executable File Formats File System Automount Point.
+1760514680.225605 localhost systemd[1]: Expecting device dev-disk-by\x2duuid-c3f8f018\x2df5f7\x2d4a5d\x2d92a1\x2d12ee87108672.device - /dev/disk/by-uuid/c3f8f018-f5f7-4a5d-92a1-12ee87108672...
+1760514680.225609 localhost systemd[1]: Reached target integritysetup.target - Local Integrity Protected Volumes.
+1760514680.225615 localhost systemd[1]: Reached target slices.target - Slice Units.
+1760514680.225619 localhost systemd[1]: Reached target snapd.mounts-pre.target - Mounting snaps.
+1760514680.225624 localhost systemd[1]: Reached target snapd.mounts.target - Mounted snaps.
+1760514680.225629 localhost systemd[1]: Reached target veritysetup.target - Local Verity Protected Volumes.
+1760514680.225634 localhost systemd[1]: Listening on dm-event.socket - Device-mapper event daemon FIFOs.
+1760514680.225638 localhost systemd[1]: Listening on lvm2-lvmpolld.socket - LVM2 poll daemon socket.
+1760514680.225643 localhost systemd[1]: Listening on multipathd.socket - multipathd control socket.
+1760514680.225648 localhost systemd[1]: Listening on syslog.socket - Syslog Socket.
+1760514680.225653 localhost systemd[1]: Listening on systemd-fsckd.socket - fsck to fsckd communication Socket.
+1760514680.225658 localhost systemd[1]: Listening on systemd-initctl.socket - initctl Compatibility Named Pipe.
+1760514680.225663 localhost systemd[1]: Listening on systemd-journald-dev-log.socket - Journal Socket (/dev/log).
+1760514680.225667 localhost systemd[1]: Listening on systemd-journald.socket - Journal Socket.
+1760514680.225672 localhost systemd[1]: Listening on systemd-networkd.socket - Network Service Netlink Socket.
+1760514680.225677 localhost systemd[1]: systemd-pcrextend.socket - TPM2 PCR Extension (Varlink) was skipped because of an unmet condition check (ConditionSecurity=measured-uki).
+1760514680.225683 localhost systemd[1]: Listening on systemd-udevd-control.socket - udev Control Socket.
+1760514680.225687 localhost systemd[1]: Listening on systemd-udevd-kernel.socket - udev Kernel Socket.
+1760514680.225692 localhost systemd[1]: Mounting dev-hugepages.mount - Huge Pages File System...
+1760514680.225697 localhost systemd[1]: Mounting dev-mqueue.mount - POSIX Message Queue File System...
+1760514680.225702 localhost systemd[1]: Mounting sys-kernel-debug.mount - Kernel Debug File System...
+1760514680.225707 localhost systemd[1]: Mounting sys-kernel-tracing.mount - Kernel Trace File System...
+1760514680.225712 localhost systemd[1]: Starting systemd-journald.service - Journal Service...
+1760514680.225717 localhost systemd[1]: Starting keyboard-setup.service - Set the console keyboard layout...
+1760514680.225721 localhost systemd[1]: Starting kmod-static-nodes.service - Create List of Static Device Nodes...
+1760514680.225726 localhost systemd[1]: Starting lvm2-monitor.service - Monitoring of LVM2 mirrors, snapshots etc. using dmeventd or progress polling...
+1760514680.225731 localhost systemd[1]: Starting modprobe@configfs.service - Load Kernel Module configfs...
+1760514680.225735 localhost systemd[1]: Starting modprobe@dm_mod.service - Load Kernel Module dm_mod...
+1760514680.225740 localhost systemd[1]: Starting modprobe@drm.service - Load Kernel Module drm...
+1760514680.225758 localhost systemd-journald[307]: Collecting audit messages is disabled.
+1760514680.225771 localhost systemd-journald[307]: Journal started
+1760514680.225785 localhost systemd-journald[307]: Runtime Journal (/run/log/journal/560b026a44d3424ea490d29e1a7e2775) is 4.8M, max 39.1M, 34.2M free.
+1760514680.229499 localhost systemd[1]: Starting modprobe@efi_pstore.service - Load Kernel Module efi_pstore...
+1760514680.231499 localhost systemd[1]: Starting modprobe@fuse.service - Load Kernel Module fuse...
+1760514680.239213 localhost systemd[1]: Starting modprobe@loop.service - Load Kernel Module loop...
+1760514680.239238 localhost systemd[1]: netplan-ovs-cleanup.service - OpenVSwitch configuration for cleanup was skipped because of an unmet condition check (ConditionFileIsExecutable=/usr/bin/ovs-vsctl).
+1760514680.252863 localhost kernel: workqueue: drm_fb_helper_damage_work hogged CPU for >10000us 16 times, consider switching to WQ_UNBOUND
+1760514680.372804 localhost systemd[1]: Starting systemd-modules-load.service - Load Kernel Modules...
+1760514680.372847 localhost systemd[1]: systemd-pcrmachine.service - TPM2 PCR Machine ID Measurement was skipped because of an unmet condition check (ConditionSecurity=measured-uki).
+1760514680.378861 localhost systemd[1]: Starting systemd-remount-fs.service - Remount Root and Kernel File Systems...
+1760514680.378889 localhost systemd[1]: systemd-tpm2-setup-early.service - TPM2 SRK Setup (Early) was skipped because of an unmet condition check (ConditionSecurity=measured-uki).
+1760514680.384503 localhost systemd[1]: Starting systemd-udev-trigger.service - Coldplug All udev Devices...
+1760514680.386273 localhost systemd[1]: Mounted dev-hugepages.mount - Huge Pages File System.
+1760514680.386568 localhost systemd[1]: Started systemd-journald.service - Journal Service.
+1760514680.387217 localhost systemd[1]: Mounted dev-mqueue.mount - POSIX Message Queue File System.
+1760514680.387691 localhost systemd[1]: Mounted sys-kernel-debug.mount - Kernel Debug File System.
+1760514680.388254 localhost systemd[1]: Mounted sys-kernel-tracing.mount - Kernel Trace File System.
+1760514680.388762 localhost systemd[1]: Finished kmod-static-nodes.service - Create List of Static Device Nodes.
+1760514680.389362 localhost systemd[1]: modprobe@configfs.service: Deactivated successfully.
+1760514680.389528 localhost systemd[1]: Finished modprobe@configfs.service - Load Kernel Module configfs.
+1760514680.390076 localhost systemd[1]: modprobe@dm_mod.service: Deactivated successfully.
+1760514680.390185 localhost systemd[1]: Finished modprobe@dm_mod.service - Load Kernel Module dm_mod.
+1760514680.390880 localhost systemd[1]: modprobe@drm.service: Deactivated successfully.
+1760514680.391034 localhost systemd[1]: Finished modprobe@drm.service - Load Kernel Module drm.
+1760514680.391577 localhost systemd[1]: modprobe@efi_pstore.service: Deactivated successfully.
+1760514680.391684 localhost systemd[1]: Finished modprobe@efi_pstore.service - Load Kernel Module efi_pstore.
+1760514680.392137 localhost systemd[1]: modprobe@fuse.service: Deactivated successfully.
+1760514680.392238 localhost systemd[1]: Finished modprobe@fuse.service - Load Kernel Module fuse.
+1760514680.392698 localhost systemd[1]: modprobe@loop.service: Deactivated successfully.
+1760514680.392801 localhost systemd[1]: Finished modprobe@loop.service - Load Kernel Module loop.
+1760514680.397581 localhost systemd[1]: Mounting sys-fs-fuse-connections.mount - FUSE Control File System...
+1760514680.399429 localhost systemd[1]: Mounting sys-kernel-config.mount - Kernel Configuration File System...
+1760514680.403335 localhost systemd[1]: systemd-repart.service - Repartition Root Disk was skipped because no trigger condition checks were met.
+1760514680.421731 localhost systemd[1]: Starting systemd-tmpfiles-setup-dev-early.service - Create Static Device Nodes in /dev gracefully...
+1760514680.433234 localhost systemd[1]: Mounted sys-fs-fuse-connections.mount - FUSE Control File System.
+1760514680.436813 localhost systemd[1]: Mounted sys-kernel-config.mount - Kernel Configuration File System.
+1760514680.457871 localhost systemd[1]: Finished keyboard-setup.service - Set the console keyboard layout.
+1760514680.496977 localhost systemd[1]: Finished systemd-tmpfiles-setup-dev-early.service - Create Static Device Nodes in /dev gracefully.
+1760514680.569834 localhost systemd-modules-load[326]: Inserted module 'msr'
+1760514680.572659 localhost systemd-modules-load[326]: Inserted module 'dm_multipath'
+1760514680.573582 localhost systemd[1]: Finished systemd-modules-load.service - Load Kernel Modules.
+1760514680.579647 localhost systemd[1]: Starting systemd-sysctl.service - Apply Kernel Variables...
+1760514680.601027 localhost lvm[310]:   1 logical volume(s) in volume group ubuntu-vg monitored
+1760514680.624794 localhost kernel: EXT4-fs (dm-0): re-mounted 78dfc1ab-05ce-40b9-a2f8-2f3e03168145 r/w. Quota mode: none.
+1760514680.623717 localhost systemd[1]: Finished systemd-remount-fs.service - Remount Root and Kernel File Systems.
+1760514680.630570 localhost systemd[1]: Activating swap swap.img.swap - /swap.img...
+1760514680.639127 localhost systemd[1]: Starting multipathd.service - Device-Mapper Multipath Device Controller...
+1760514680.640447 localhost systemd[1]: systemd-hwdb-update.service - Rebuild Hardware Database was skipped because of an unmet condition check (ConditionNeedsUpdate=/etc).
+1760514680.641637 localhost systemd[1]: Starting systemd-journal-flush.service - Flush Journal to Persistent Storage...
+1760514680.643935 localhost systemd[1]: systemd-pstore.service - Platform Persistent Storage Archival was skipped because of an unmet condition check (ConditionDirectoryNotEmpty=/sys/fs/pstore).
+1760514680.644987 localhost systemd[1]: Starting systemd-random-seed.service - Load/Save OS Random Seed...
+1760514680.645624 localhost systemd[1]: systemd-sysusers.service - Create System Users was skipped because no trigger condition checks were met.
+1760514680.652263 localhost systemd[1]: Starting systemd-tmpfiles-setup-dev.service - Create Static Device Nodes in /dev...
+1760514680.652683 localhost systemd[1]: systemd-tpm2-setup.service - TPM2 SRK Setup was skipped because of an unmet condition check (ConditionSecurity=measured-uki).
+1760514680.652953 localhost systemd[1]: Finished lvm2-monitor.service - Monitoring of LVM2 mirrors, snapshots etc. using dmeventd or progress polling.
+1760514680.653404 localhost systemd[1]: Finished systemd-udev-trigger.service - Coldplug All udev Devices.
+1760514680.653847 localhost systemd[1]: Finished systemd-sysctl.service - Apply Kernel Variables.
+1760514680.656616 localhost systemd-journald[307]: Time spent on flushing to /var/log/journal/560b026a44d3424ea490d29e1a7e2775 is 1.115018s for 787 entries.
+1760514680.656616 localhost systemd-journald[307]: System Journal (/var/log/journal/560b026a44d3424ea490d29e1a7e2775) is 33.6M, max 1.4G, 1.4G free.
+1760514683.681878 localhost systemd-journald[307]: Received client request to flush runtime journal.
+1760514683.681934 localhost kernel: Adding 3261436k swap on /swap.img.  Priority:-2 extents:7 across:5735424k
+1760514683.681949 localhost systemd-journald[307]: /var/log/journal/560b026a44d3424ea490d29e1a7e2775/system.journal: Journal file uses a different sequence number ID, rotating.
+1760514683.681965 localhost systemd-journald[307]: Rotating system journal.
+1760514683.681979 localhost kernel: piix4_smbus 0000:00:01.3: SMBus Host Controller at 0x700, revision 0
+1760514683.682134 localhost kernel: EXT4-fs (sda2): mounted filesystem c3f8f018-f5f7-4a5d-92a1-12ee87108672 r/w with ordered data mode. Quota mode: none.
+1760514683.682146 localhost kernel: workqueue: drm_fb_helper_damage_work hogged CPU for >10000us 32 times, consider switching to WQ_UNBOUND
+1760514683.682158 localhost kernel: audit: type=1400 audit(1760514682.358:2): apparmor=STATUS operation=profile_load profile=unconfined name=1password pid=540 comm=apparmor_parser
+1760514683.682169 localhost kernel: audit: type=1400 audit(1760514682.362:3): apparmor=STATUS operation=profile_load profile=unconfined name=Discord pid=541 comm=apparmor_parser
+1760514683.682179 localhost kernel: audit: type=1400 audit(1760514682.363:4): apparmor=STATUS operation=profile_load profile=unconfined name=4D6F6E676F444220436F6D70617373 pid=543 comm=apparmor_parser
+1760514683.682191 localhost kernel: audit: type=1400 audit(1760514682.363:5): apparmor=STATUS operation=profile_load profile=unconfined name=QtWebEngineProcess pid=544 comm=apparmor_parser
+1760514683.682209 localhost kernel: audit: type=1400 audit(1760514682.364:6): apparmor=STATUS operation=profile_load profile=unconfined name=balena-etcher pid=545 comm=apparmor_parser
+1760514683.682222 localhost kernel: audit: type=1400 audit(1760514682.374:7): apparmor=STATUS operation=profile_load profile=unconfined name=brave pid=546 comm=apparmor_parser
+1760514683.682236 localhost kernel: audit: type=1400 audit(1760514682.387:8): apparmor=STATUS operation=profile_load profile=unconfined name=buildah pid=547 comm=apparmor_parser
+1760514683.682247 localhost kernel: cfg80211: Loading compiled-in X.509 certificates for regulatory database
+1760514683.682255 localhost kernel: Loaded X.509 cert 'sforshee: 00b28ddf47aef9cea7'
+1760514683.682263 localhost kernel: Loaded X.509 cert 'wens: 61c038651aabdcf94bd0ac7ff06c7248db18c600'
+1760514683.682270 localhost kernel: audit: type=1400 audit(1760514682.568:9): apparmor=STATUS operation=profile_load profile=unconfined name=cam pid=549 comm=apparmor_parser
+1760514683.682277 localhost kernel: audit: type=1400 audit(1760514682.569:10): apparmor=STATUS operation=profile_load profile=unconfined name=busybox pid=548 comm=apparmor_parser
+1760514683.682285 localhost kernel: audit: type=1400 audit(1760514682.571:11): apparmor=STATUS operation=profile_load profile=unconfined name=ch-checkns pid=552 comm=apparmor_parser
+1760514680.662728 localhost systemd[1]: Activated swap swap.img.swap - /swap.img.
+1760514680.663775 localhost systemd[1]: Reached target swap.target - Swaps.
+1760514680.667677 localhost systemd[1]: Finished systemd-tmpfiles-setup-dev.service - Create Static Device Nodes in /dev.
+1760514683.682672 localhost multipathd[363]: multipathd v0.9.4: start up
+1760514683.682672 localhost multipathd[363]: reconfigure: setting up paths and maps
+1760514680.670420 localhost systemd[1]: Starting systemd-udevd.service - Rule-based Manager for Device Events and Files...
+1760514680.698375 localhost systemd-udevd[369]: Using default interface naming scheme 'v255'.
+1760514680.917382 localhost systemd[1]: Started multipathd.service - Device-Mapper Multipath Device Controller.
+1760514680.917902 localhost systemd[1]: Reached target local-fs-pre.target - Preparation for Local File Systems.
+1760514680.988596 localhost systemd[1]: Started systemd-udevd.service - Rule-based Manager for Device Events and Files.
+1760514680.990149 localhost systemd[1]: plymouth-start.service - Show Plymouth Boot Screen was skipped because of an unmet condition check (ConditionKernelCommandLine=splash).
+1760514683.683350 localhost systemd-fsck[492]: /dev/sda2: clean, 317/131072 files, 50706/524288 blocks
+1760514680.990217 localhost systemd[1]: Started systemd-ask-password-console.path - Dispatch Password Requests to Console Directory Watch.
+1760514680.990732 localhost systemd[1]: systemd-ask-password-plymouth.path - Forward Password Requests to Plymouth Directory Watch was skipped because of an unmet condition check (ConditionPathExists=/run/plymouth/pid).
+1760514683.683631 localhost apparmor.systemd[521]: Restarting AppArmor
+1760514683.683631 localhost apparmor.systemd[521]: Reloading AppArmor profiles
+1760514680.990744 localhost systemd[1]: Reached target cryptsetup.target - Local Encrypted Volumes.
+1760514681.264802 localhost systemd[1]: Condition check resulted in dev-vport1p1.device - /dev/vport1p1 being skipped.
+1760514681.264811 localhost systemd[1]: Condition check resulted in dev-virtio\x2dports-org.qemu.guest_agent.0.device - /dev/virtio-ports/org.qemu.guest_agent.0 being skipped.
+1760514681.266926 localhost systemd[1]: Listening on systemd-rfkill.socket - Load/Save RF Kill Switch Status /dev/rfkill Watch.
+1760514681.277644 localhost systemd[1]: Starting modprobe@dm_mod.service - Load Kernel Module dm_mod...
+1760514681.282204 localhost systemd[1]: Starting modprobe@efi_pstore.service - Load Kernel Module efi_pstore...
+1760514681.284357 localhost systemd[1]: Starting modprobe@loop.service - Load Kernel Module loop...
+1760514681.285032 localhost systemd[1]: netplan-ovs-cleanup.service - OpenVSwitch configuration for cleanup was skipped because of an unmet condition check (ConditionFileIsExecutable=/usr/bin/ovs-vsctl).
+1760514681.285077 localhost systemd[1]: plymouth-start.service - Show Plymouth Boot Screen was skipped because of an unmet condition check (ConditionKernelCommandLine=splash).
+1760514683.684310 localhost snapd-apparmor[648]: main.go:143: No profiles to load
+1760514681.285097 localhost systemd[1]: systemd-ask-password-plymouth.path - Forward Password Requests to Plymouth Directory Watch was skipped because of an unmet condition check (ConditionPathExists=/run/plymouth/pid).
+1760514681.285158 localhost systemd[1]: systemd-hwdb-update.service - Rebuild Hardware Database was skipped because of an unmet condition check (ConditionNeedsUpdate=/etc).
+1760514681.285177 localhost systemd[1]: systemd-pcrmachine.service - TPM2 PCR Machine ID Measurement was skipped because of an unmet condition check (ConditionSecurity=measured-uki).
+1760514681.285203 localhost systemd[1]: systemd-sysusers.service - Create System Users was skipped because no trigger condition checks were met.
+1760514681.285219 localhost systemd[1]: systemd-tpm2-setup-early.service - TPM2 SRK Setup (Early) was skipped because of an unmet condition check (ConditionSecurity=measured-uki).
+1760514681.285225 localhost systemd[1]: systemd-tpm2-setup.service - TPM2 SRK Setup was skipped because of an unmet condition check (ConditionSecurity=measured-uki).
+1760514681.285382 localhost systemd[1]: modprobe@dm_mod.service: Deactivated successfully.
+1760514681.285468 localhost systemd[1]: Finished modprobe@dm_mod.service - Load Kernel Module dm_mod.
+1760514681.285887 localhost systemd[1]: modprobe@efi_pstore.service: Deactivated successfully.
+1760514681.285947 localhost systemd[1]: Finished modprobe@efi_pstore.service - Load Kernel Module efi_pstore.
+1760514681.286246 localhost systemd[1]: systemd-pstore.service - Platform Persistent Storage Archival was skipped because of an unmet condition check (ConditionDirectoryNotEmpty=/sys/fs/pstore).
+1760514681.288887 localhost systemd[1]: modprobe@loop.service: Deactivated successfully.
+1760514681.288973 localhost systemd[1]: Finished modprobe@loop.service - Load Kernel Module loop.
+1760514681.289572 localhost systemd[1]: systemd-repart.service - Repartition Root Disk was skipped because no trigger condition checks were met.
+1760514681.361528 localhost (udev-worker)[395]: sda: Process '/usr/bin/unshare -m /usr/bin/snap auto-import --mount=/dev/sda' failed with exit code 1.
+1760514681.375575 localhost systemd[1]: Finished systemd-random-seed.service - Load/Save OS Random Seed.
+1760514681.397212 localhost (udev-worker)[383]: sda1: Process '/usr/bin/unshare -m /usr/bin/snap auto-import --mount=/dev/sda1' failed with exit code 1.
+1760514681.462948 localhost lvm[461]: PV /dev/sda3 online, VG ubuntu-vg is complete.
+1760514681.462954 localhost lvm[461]: VG ubuntu-vg finished
+1760514681.472888 localhost (udev-worker)[392]: sda3: Process '/usr/bin/unshare -m /usr/bin/snap auto-import --mount=/dev/sda3' failed with exit code 1.
+1760514681.495022 localhost (udev-worker)[395]: sda2: Process '/usr/bin/unshare -m /usr/bin/snap auto-import --mount=/dev/sda2' failed with exit code 1.
+1760514681.592048 localhost systemd[1]: Found device dev-disk-by\x2duuid-c3f8f018\x2df5f7\x2d4a5d\x2d92a1\x2d12ee87108672.device - QEMU_HARDDISK 2.
+1760514681.737710 localhost (udev-worker)[399]: dm-0: Process '/usr/bin/unshare -m /usr/bin/snap auto-import --mount=/dev/dm-0' failed with exit code 1.
+1760514681.802711 localhost systemd[1]: Starting systemd-fsck@dev-disk-by\x2duuid-c3f8f018\x2df5f7\x2d4a5d\x2d92a1\x2d12ee87108672.service - File System Check on /dev/disk/by-uuid/c3f8f018-f5f7-4a5d-92a1-12ee87108672...
+1760514681.806090 localhost (udev-worker)[388]: sr0: Process '/usr/bin/unshare -m /usr/bin/snap auto-import --mount=/dev/sr0' failed with exit code 1.
+1760514682.010326 localhost systemd[1]: Started systemd-fsckd.service - File System Check Daemon to report status.
+1760514682.115014 localhost systemd[1]: Finished systemd-fsck@dev-disk-by\x2duuid-c3f8f018\x2df5f7\x2d4a5d\x2d92a1\x2d12ee87108672.service - File System Check on /dev/disk/by-uuid/c3f8f018-f5f7-4a5d-92a1-12ee87108672.
+1760514682.146565 localhost systemd[1]: Mounting boot.mount - /boot...
+1760514682.155059 localhost systemd[1]: Mounted boot.mount - /boot.
+1760514682.155501 localhost systemd[1]: Reached target local-fs.target - Local File Systems.
+1760514682.157067 localhost systemd[1]: Listening on systemd-sysext.socket - System Extension Image Management (Varlink).
+1760514682.158570 localhost systemd[1]: Starting apparmor.service - Load AppArmor profiles...
+1760514682.162097 localhost systemd[1]: Starting console-setup.service - Set console font and keymap...
+1760514682.164676 localhost systemd[1]: Starting finalrd.service - Create final runtime dir for shutdown pivot root...
+1760514682.164988 localhost systemd[1]: ldconfig.service - Rebuild Dynamic Linker Cache was skipped because no trigger condition checks were met.
+1760514682.167083 localhost systemd[1]: Starting plymouth-read-write.service - Tell Plymouth To Write Out Runtime Data...
+1760514682.185710 localhost systemd[1]: Starting systemd-binfmt.service - Set Up Additional Binary Formats...
+1760514682.190161 localhost systemd[1]: Starting ufw.service - Uncomplicated firewall...
+1760514682.190777 localhost systemd[1]: Finished console-setup.service - Set console font and keymap.
+1760514682.191189 localhost systemd[1]: Finished finalrd.service - Create final runtime dir for shutdown pivot root.
+1760514682.191625 localhost systemd[1]: Finished plymouth-read-write.service - Tell Plymouth To Write Out Runtime Data.
+1760514682.192117 localhost systemd[1]: proc-sys-fs-binfmt_misc.automount: Got automount request for /proc/sys/fs/binfmt_misc, triggered by 527 (systemd-binfmt)
+1760514682.193538 localhost systemd[1]: Mounting proc-sys-fs-binfmt_misc.mount - Arbitrary Executable File Formats File System...
+1760514682.198608 localhost systemd[1]: Mounted proc-sys-fs-binfmt_misc.mount - Arbitrary Executable File Formats File System.
+1760514682.199666 localhost systemd[1]: Finished systemd-binfmt.service - Set Up Additional Binary Formats.
+1760514682.310090 localhost systemd[1]: Finished ufw.service - Uncomplicated firewall.
+1760514682.310615 localhost systemd[1]: Reached target network-pre.target - Preparation for Network.
+1760514682.321707 localhost systemd[1]: Starting systemd-networkd.service - Network Configuration...
+1760514682.572559 localhost systemd-networkd[539]: lo: Link UP
+1760514682.572564 localhost systemd-networkd[539]: lo: Gained carrier
+1760514682.573535 localhost systemd-networkd[539]: Enumeration completed
+1760514682.573611 localhost systemd[1]: Started systemd-networkd.service - Network Configuration.
+1760514682.578595 localhost systemd-networkd[539]: ens18: Configuring with /run/systemd/network/10-netplan-ens18.network.
+1760514682.579577 localhost systemd-networkd[539]: ens18: Link UP
+1760514682.579579 localhost systemd-networkd[539]: ens18: Gained carrier
+1760514682.579741 localhost systemd[1]: Starting systemd-networkd-wait-online.service - Wait for Network to be Configured...
+1760514682.590598 localhost systemd-networkd[539]: ens18: DHCPv4 address 172.16.9.176/23, gateway 172.16.8.1 acquired from 172.16.8.1
+1760514683.341670 localhost systemd[1]: Finished apparmor.service - Load AppArmor profiles.
+1760514683.348688 localhost systemd[1]: Starting snapd.apparmor.service - Load AppArmor profiles managed internally by snapd...
+1760514683.360398 localhost systemd[1]: Finished snapd.apparmor.service - Load AppArmor profiles managed internally by snapd.
+1760514683.682963 localhost systemd[1]: Finished systemd-journal-flush.service - Flush Journal to Persistent Storage.
+1760514683.694674 localhost systemd[1]: Starting systemd-tmpfiles-setup.service - Create Volatile Files and Directories...
+1760514683.854758 localhost systemd[1]: Finished systemd-tmpfiles-setup.service - Create Volatile Files and Directories.
+1760514683.855401 localhost systemd[1]: systemd-firstboot.service - First Boot Wizard was skipped because of an unmet condition check (ConditionFirstBoot=yes).
+1760514683.855427 localhost systemd[1]: first-boot-complete.target - First Boot Complete was skipped because of an unmet condition check (ConditionFirstBoot=yes).
+1760514683.855480 localhost systemd[1]: systemd-journal-catalog-update.service - Rebuild Journal Catalog was skipped because of an unmet condition check (ConditionNeedsUpdate=/var).
+1760514683.855515 localhost systemd[1]: systemd-machine-id-commit.service - Commit a transient machine-id on disk was skipped because of an unmet condition check (ConditionPathIsMountPoint=/etc/machine-id).
+1760514683.861689 localhost systemd[1]: Starting systemd-resolved.service - Network Name Resolution...
+1760514683.864660 localhost systemd[1]: Starting systemd-timesyncd.service - Network Time Synchronization...
+1760514683.865219 localhost systemd[1]: systemd-update-done.service - Update is Completed was skipped because no trigger condition checks were met.
+1760514683.865906 localhost systemd[1]: Starting systemd-update-utmp.service - Record System Boot/Shutdown in UTMP...
+1760514683.867590 localhost systemd[1]: vgauth.service - Authentication service for virtual machines hosted on VMware was skipped because of an unmet condition check (ConditionVirtualization=vmware).
+1760514683.867698 localhost systemd[1]: open-vm-tools.service - Service for virtual machines hosted on VMware was skipped because of an unmet condition check (ConditionVirtualization=vmware).
+1760514683.916387 localhost systemd[1]: Started systemd-timesyncd.service - Network Time Synchronization.
+1760514683.919137 localhost systemd[1]: Finished systemd-update-utmp.service - Record System Boot/Shutdown in UTMP.
+1760514683.919834 localhost systemd[1]: Reached target time-set.target - System Time Set.
+1760514683.945077 localhost systemd-resolved[672]: Positive Trust Anchors:
+1760514683.945359 localhost systemd-resolved[672]: . IN DS 20326 8 2 e06d44b80b8f1d39a95c0b0d7c65d08458e880409bbc683457104237c7f8ec8d
+1760514683.945384 localhost systemd-resolved[672]: Negative trust anchors: home.arpa 10.in-addr.arpa 16.172.in-addr.arpa 17.172.in-addr.arpa 18.172.in-addr.arpa 19.172.in-addr.arpa 20.172.in-addr.arpa 21.172.in-addr.arpa 22.172.in-addr.arpa 23.172.in-addr.arpa 24.172.in-addr.arpa 25.172.in-addr.arpa 26.172.in-addr.arpa 27.172.in-addr.arpa 28.172.in-addr.arpa 29.172.in-addr.arpa 30.172.in-addr.arpa 31.172.in-addr.arpa 170.0.0.192.in-addr.arpa 171.0.0.192.in-addr.arpa 168.192.in-addr.arpa d.f.ip6.arpa ipv4only.arpa corp home internal intranet lan local private test
+1760514684.006137 localhost systemd-resolved[672]: Defaulting to hostname 'linux'.
+1760514684.007375 localhost systemd[1]: Started systemd-resolved.service - Network Name Resolution.
+1760514684.008002 localhost systemd[1]: Reached target network.target - Network.
+1760514684.008608 localhost systemd[1]: Reached target nss-lookup.target - Host and Network Name Lookups.
+1760514684.009147 localhost systemd[1]: Reached target sysinit.target - System Initialization.
+1760514684.009551 localhost systemd[1]: apport-autoreport.path - Process error reports when automatic reporting is enabled (file watch) was skipped because of an unmet condition check (ConditionPathExists=/var/lib/apport/autoreport).
+1760514684.009606 localhost systemd[1]: tpm-udev.path - Handle dynamically added tpm devices was skipped because of an unmet condition check (ConditionVirtualization=container).
+1760514684.009650 localhost systemd[1]: apport-autoreport.timer - Process error reports when automatic reporting is enabled (timer based) was skipped because of an unmet condition check (ConditionPathExists=/var/lib/apport/autoreport).
+1760514684.019141 localhost systemd[1]: Started apt-daily.timer - Daily apt download activities.
+1760514684.019750 localhost systemd[1]: Started apt-daily-upgrade.timer - Daily apt upgrade and clean activities.
+1760514684.020193 localhost systemd[1]: Started dpkg-db-backup.timer - Daily dpkg database backup timer.
+1760514684.020716 localhost systemd[1]: Started e2scrub_all.timer - Periodic ext4 Online Metadata Check for All Filesystems.
+1760514684.021089 localhost systemd[1]: Started fstrim.timer - Discard unused filesystem blocks once a week.
+1760514684.021442 localhost systemd[1]: Started fwupd-refresh.timer - Refresh fwupd metadata regularly.
+1760514684.021810 localhost systemd[1]: Started logrotate.timer - Daily rotation of log files.
+1760514684.022145 localhost systemd[1]: Started man-db.timer - Daily man-db regeneration.
+1760514684.022498 localhost systemd[1]: Started motd-news.timer - Message of the Day.
+1760514684.022840 localhost systemd[1]: snapd.snap-repair.timer - Timer to automatically fetch and run repair assertions was skipped because no trigger condition checks were met.
+1760514684.022903 localhost systemd[1]: Started sysstat-collect.timer - Run system activity accounting tool every 10 minutes.
+1760514684.023213 localhost systemd[1]: Started sysstat-summary.timer - Generate summary of yesterday's process accounting.
+1760514684.023595 localhost systemd[1]: Started systemd-tmpfiles-clean.timer - Daily Cleanup of Temporary Directories.
+1760514684.034520 localhost systemd[1]: ua-timer.timer - Ubuntu Pro Timer for running repeated jobs was skipped because of an unmet condition check (ConditionPathExists=/var/lib/ubuntu-advantage/private/machine-token.json).
+1760514684.034682 localhost systemd[1]: Reached target paths.target - Path Units.
+1760514684.035224 localhost systemd[1]: apport-forward.socket - Unix socket for apport crash forwarding was skipped because of an unmet condition check (ConditionVirtualization=container).
+1760514684.037515 localhost systemd[1]: Listening on dbus.socket - D-Bus System Message Bus Socket.
+1760514684.037830 localhost systemd[1]: Listening on iscsid.socket - Open-iSCSI iscsid Socket.
+1760514684.039661 localhost systemd[1]: Starting lxd-installer.socket - Helper to install lxd snap on demand...
+1760514684.045543 localhost systemd[1]: Starting snapd.socket - Socket activation for snappy daemon...
+1760514684.046807 localhost systemd[1]: Listening on ssh.socket - OpenBSD Secure Shell server socket.
+1760514684.047232 localhost systemd[1]: Listening on uuidd.socket - UUID daemon activation socket.
+1760514684.047637 localhost systemd[1]: systemd-pcrphase-sysinit.service - TPM2 PCR Barrier (Initialization) was skipped because of an unmet condition check (ConditionSecurity=measured-uki).
+1760514684.048114 localhost systemd[1]: Listening on lxd-installer.socket - Helper to install lxd snap on demand.
+1760514684.048506 localhost systemd[1]: Listening on snapd.socket - Socket activation for snappy daemon.
+1760514684.048850 localhost systemd[1]: Reached target sockets.target - Socket Units.
+1760514684.049151 localhost systemd[1]: Reached target basic.target - Basic System.
+1760514684.051572 localhost systemd[1]: Starting dbus.service - D-Bus System Message Bus...
+1760514684.052320 localhost systemd[1]: Started dmesg.service - Save initial kernel messages after boot.
+1760514684.062744 localhost systemd[1]: Starting e2scrub_reap.service - Remove Stale Online ext4 Metadata Check Snapshots...
+1760514684.068222 localhost systemd[1]: Starting grub-common.service - Record successful boot for GRUB...
+1760514684.077061 localhost systemd[1]: networkd-dispatcher.service - Dispatcher daemon for systemd-networkd was skipped because no trigger condition checks were met.
+1760514684.084724 localhost systemd[1]: Starting polkit.service - Authorization Manager...
+1760514684.087611 localhost systemd[1]: Started qemu-guest-agent.service - QEMU Guest Agent.
+1760514684.088671 localhost systemd[1]: Starting rsyslog.service - System Logging Service...
+1760514684.089018 localhost systemd[1]: secureboot-db.service - Secure Boot updates for DB and DBX was skipped because of an unmet condition check (ConditionPathExists=/sys/firmware/efi/efivars/db-d719b2cb-3d3a-4596-a3bc-dad00e67656f).
+1760514684.089084 localhost systemd[1]: snapd.core-fixup.service - Automatically repair incorrect owner/permissions on core devices was skipped because no trigger condition checks were met.
+1760514684.089147 localhost systemd[1]: snapd.recovery-chooser-trigger.service - Wait for the Ubuntu Core chooser trigger was skipped because of an unmet condition check (ConditionKernelCommandLine=snapd_recovery_mode).
+1760514684.089191 localhost systemd[1]: Reached target getty-pre.target - Preparation for Logins.
+1760514684.094977 localhost systemd[1]: Starting snapd.seeded.service - Wait until snapd is fully seeded...
+1760514684.098473 localhost systemd[1]: Starting snapd.service - Snap Daemon...
+1760514684.102061 localhost systemd[1]: Starting sysstat.service - Resets System Activity Logs...
+1760514684.125465 localhost systemd[1]: Starting systemd-logind.service - User Login Management...
+1760514684.127601 localhost systemd[1]: thermald.service - Thermal Daemon Service was skipped because of an unmet condition check (ConditionVirtualization=no).
+1760514684.127669 localhost systemd[1]: ua-reboot-cmds.service - Ubuntu Pro reboot cmds was skipped because of an unmet condition check (ConditionPathExists=/var/lib/ubuntu-advantage/private/machine-token.json).
+1760514684.142573 localhost systemd[1]: Starting udisks2.service - Disk Manager...
+1760514684.144854 localhost systemd[1]: e2scrub_reap.service: Deactivated successfully.
+1760514684.144934 localhost systemd[1]: Finished e2scrub_reap.service - Remove Stale Online ext4 Metadata Check Snapshots.
+1760514684.180559 localhost systemd-logind[693]: New seat seat0.
+1760514684.182673 localhost systemd-logind[693]: Watching system buttons on /dev/input/event0 (Power Button)
+1760514684.182727 localhost systemd-logind[693]: Watching system buttons on /dev/input/event1 (AT Translated Set 2 keyboard)
+1760514684.182867 localhost systemd[1]: Started systemd-logind.service - User Login Management.
+1760514684.201595 localhost polkitd[686]: Started polkitd version 124
+1760514684.209926 localhost dbus-daemon[681]: dbus[681]: Unknown group power in message bus configuration file
+1760514684.213833 localhost systemd[1]: Started unattended-upgrades.service - Unattended Upgrades Shutdown.
+1760514684.221017 localhost systemd[1]: Finished sysstat.service - Resets System Activity Logs.
+1760514684.274400 localhost dbus-daemon[681]: [system] AppArmor D-Bus mediation is enabled
+1760514684.274828 localhost systemd[1]: Started dbus.service - D-Bus System Message Bus.
+1760514684.277749 localhost dbus-daemon[681]: [system] Activating systemd to hand-off: service name='org.freedesktop.hostname1' unit='dbus-org.freedesktop.hostname1.service' requested by ':1.1' (uid=998 pid=539 comm=/usr/lib/systemd/systemd-networkd label=unconfined)
+1760514684.278649 localhost dbus-daemon[681]: [system] Successfully activated service 'org.freedesktop.systemd1'
+1760514684.289627 localhost systemd[1]: Starting systemd-hostnamed.service - Hostname Service...
+1760514684.290099 localhost polkitd[686]: Loading rules from directory /etc/polkit-1/rules.d
+1760514684.291875 localhost polkitd[686]: Loading rules from directory /usr/share/polkit-1/rules.d
+1760514684.316693 localhost dbus-daemon[681]: [system] Successfully activated service 'org.freedesktop.hostname1'
+1760514684.316908 localhost systemd[1]: Started systemd-hostnamed.service - Hostname Service.
+1760514684.317320 localhost dbus-daemon[681]: [system] Activating via systemd: service name='org.freedesktop.PolicyKit1' unit='polkit.service' requested by ':1.6' (uid=0 pid=712 comm=/usr/lib/systemd/systemd-hostnamed label=unconfined)
+1760514684.359691 localhost polkitd[686]: Finished loading, compiling and executing 6 rules
+1760514684.360205 localhost dbus-daemon[681]: [system] Successfully activated service 'org.freedesktop.PolicyKit1'
+1760514684.360983 localhost polkitd[686]: Acquired the name org.freedesktop.PolicyKit1 on the system bus
+1760514684.361177 localhost systemd[1]: Started polkit.service - Authorization Manager.
+1760514684.363013 localhost rsyslogd[704]: imuxsock: Acquired UNIX socket '/run/systemd/journal/syslog' (fd 3) from systemd.  [v8.2312.0]
+1760514684.363269 localhost rsyslogd[704]: rsyslogd's groupid changed to 104
+1760514684.363273 localhost rsyslogd[704]: rsyslogd's userid changed to 103
+1760514684.363274 localhost rsyslogd[704]: [origin software=rsyslogd swVersion=8.2312.0 x-pid=704 x-info=https://www.rsyslog.com] start
+1760514684.367765 localhost systemd[1]: Starting ModemManager.service - Modem Manager...
+1760514684.368271 localhost systemd[1]: Started rsyslog.service - System Logging Service.
+1760514684.441363 localhost systemd-networkd[539]: ens18: Gained IPv6LL
+1760514684.442031 localhost systemd-timesyncd[673]: Network configuration changed, trying to establish connection.
+1760514684.447793 localhost udisksd[695]: udisks daemon version 2.10.1 starting
+1760514684.453920 localhost systemd[1]: Finished systemd-networkd-wait-online.service - Wait for Network to be Configured.
+1760514684.455322 localhost systemd[1]: Reached target network-online.target - Network is Online.
+1760514684.456711 localhost systemd[1]: Started update-notifier-download.timer - Download data for packages that failed at package install time.
+1760514684.458075 localhost systemd[1]: Started update-notifier-motd.timer - Check to see whether there is a new version of Ubuntu available.
+1760514684.459259 localhost systemd[1]: Reached target timers.target - Timer Units.
+1760514684.460293 localhost systemd[1]: open-iscsi.service - Login to default iSCSI targets was skipped because no trigger condition checks were met.
+1760514684.460480 localhost systemd[1]: Reached target remote-fs-pre.target - Preparation for Remote File Systems.
+1760514684.461299 localhost systemd[1]: Reached target remote-fs.target - Remote File Systems.
+1760514684.467641 localhost systemd[1]: Starting apport.service - automatic crash report generation...
+1760514684.469206 localhost systemd[1]: Finished blk-availability.service - Availability of block devices.
+1760514684.473516 localhost systemd[1]: Started cron.service - Regular background program processing daemon.
+1760514684.475197 localhost systemd[1]: systemd-pcrphase.service - TPM2 PCR Barrier (User) was skipped because of an unmet condition check (ConditionSecurity=measured-uki).
+1760514684.478769 localhost (cron)[737]: cron.service: Referenced but unset environment variable evaluates to an empty string: EXTRA_OPTS
+1760514684.480865 localhost systemd[1]: Starting systemd-user-sessions.service - Permit User Sessions...
+1760514684.482071 localhost systemd[1]: ubuntu-advantage.service - Ubuntu Pro Background Auto Attach was skipped because no trigger condition checks were met.
+1760514684.484868 eltex-practice2-pg1-v2 systemd-hostnamed[712]: Hostname set to <eltex-practice2-pg1-v2> (transient)
+1760514684.487322 eltex-practice2-pg1-v2 cron[737]: (CRON) INFO (pidfile fd = 3)
+1760514684.489691 eltex-practice2-pg1-v2 systemd[1]: Finished systemd-user-sessions.service - Permit User Sessions.
+1760514684.490110 eltex-practice2-pg1-v2 cron[737]: (CRON) INFO (Running @reboot jobs)
+1760514684.495818 eltex-practice2-pg1-v2 systemd[1]: Starting plymouth-quit-wait.service - Hold until boot process finishes up...
+1760514684.499769 eltex-practice2-pg1-v2 systemd[1]: Starting plymouth-quit.service - Terminate Plymouth Boot Screen...
+1760514684.500930 eltex-practice2-pg1-v2 systemd[1]: Finished plymouth-quit-wait.service - Hold until boot process finishes up.
+1760514684.504688 eltex-practice2-pg1-v2 systemd[1]: Starting setvtrgb.service - Set console scheme...
+1760514684.513375 eltex-practice2-pg1-v2 systemd[1]: Finished plymouth-quit.service - Terminate Plymouth Boot Screen.
+1760514684.524211 eltex-practice2-pg1-v2 systemd-resolved[672]: System hostname changed to 'eltex-practice2-pg1-v2'.
+1760514684.645837 eltex-practice2-pg1-v2 systemd[1]: Finished setvtrgb.service - Set console scheme.
+1760514684.647041 eltex-practice2-pg1-v2 systemd[1]: Created slice system-getty.slice - Slice /system/getty.
+1760514684.653737 eltex-practice2-pg1-v2 systemd[1]: Started getty@tty1.service - Getty on tty1.
+1760514684.654166 eltex-practice2-pg1-v2 systemd[1]: Reached target getty.target - Login Prompts.
+1760514684.807985 eltex-practice2-pg1-v2 systemd[1]: grub-common.service: Deactivated successfully.
+1760514684.808271 eltex-practice2-pg1-v2 systemd[1]: Finished grub-common.service - Record successful boot for GRUB.
+1760514684.814757 eltex-practice2-pg1-v2 systemd[1]: Starting grub-initrd-fallback.service - GRUB failed boot detection...
+1760514684.875687 eltex-practice2-pg1-v2 ModemManager[723]: <msg> ModemManager (version 1.23.4) starting in system bus...
+1760514685.129726 eltex-practice2-pg1-v2 udisksd[695]: Error probing device: Error sending ATA command IDENTIFY PACKET DEVICE to '/dev/sr0': Unexpected sense data returned:
+                                                       0000: 00 00 00 00  00 00 00 00  00 00 00 00  00 00 00 00    ................
+                                                       0010: 00 00 00 00  00 00 00 00  00 00 00 00  00 00 00 00    ................
+                                                        (g-io-error-quark, 0)
+1760514685.136604 eltex-practice2-pg1-v2 udisksd[695]: Acquired the name org.freedesktop.UDisks2 on the system message bus
+1760514685.137089 eltex-practice2-pg1-v2 systemd[1]: Started udisks2.service - Disk Manager.
+1760514685.441506 eltex-practice2-pg1-v2 kernel: NET: Registered PF_QIPCRTR protocol family
+1760514685.442686 eltex-practice2-pg1-v2 systemd[1]: Started ModemManager.service - Modem Manager.
+1760514685.855216 eltex-practice2-pg1-v2 systemd[1]: grub-initrd-fallback.service: Deactivated successfully.
+1760514685.855313 eltex-practice2-pg1-v2 systemd[1]: Finished grub-initrd-fallback.service - GRUB failed boot detection.
+1760514686.913296 eltex-practice2-pg1-v2 snapd[691]: overlord.go:274: Acquiring state lock file
+1760514686.913296 eltex-practice2-pg1-v2 snapd[691]: overlord.go:279: Acquired state lock file
+1760514687.802871 eltex-practice2-pg1-v2 systemd[1]: Finished apport.service - automatic crash report generation.
+1760514688.172620 eltex-practice2-pg1-v2 snapd[691]: daemon.go:250: started snapd/2.66.1+24.04 (series 16; classic) ubuntu/24.04 (amd64) linux/6.8.0-55-generic.
+1760514688.178556 eltex-practice2-pg1-v2 kernel: loop0: detected capacity change from 0 to 8
+1760514688.183461 eltex-practice2-pg1-v2 snapd[691]: daemon.go:353: adjusting startup timeout by 30s (pessimistic estimate of 30s plus 5s per snap)
+1760514688.184215 eltex-practice2-pg1-v2 systemd[1]: tmp-syscheck\x2dmountpoint\x2d634145658.mount: Deactivated successfully.
+1760514688.184982 eltex-practice2-pg1-v2 snapd[691]: backends.go:58: AppArmor status: apparmor is enabled and all features are available
+1760514688.242517 eltex-practice2-pg1-v2 kernel: kauditd_printk_skb: 110 callbacks suppressed
+1760514688.242570 eltex-practice2-pg1-v2 kernel: audit: type=1400 audit(1760514688.241:122): apparmor=STATUS operation=profile_replace profile=unconfined name=/usr/lib/snapd/snap-confine pid=812 comm=apparmor_parser
+1760514688.247503 eltex-practice2-pg1-v2 kernel: audit: type=1400 audit(1760514688.246:123): apparmor=STATUS operation=profile_replace profile=unconfined name=/usr/lib/snapd/snap-confine//mount-namespace-capture-helper pid=812 comm=apparmor_parser
+1760514688.281839 eltex-practice2-pg1-v2 systemd[1]: Cannot find unit for notify message of PID 820, ignoring.
+1760514688.282066 eltex-practice2-pg1-v2 systemd[1]: Started snapd.service - Snap Daemon.
+1760514688.284252 eltex-practice2-pg1-v2 dbus-daemon[681]: [system] Activating via systemd: service name='org.freedesktop.timedate1' unit='dbus-org.freedesktop.timedate1.service' requested by ':1.10' (uid=0 pid=691 comm=/usr/lib/snapd/snapd label=unconfined)
+1760514688.294370 eltex-practice2-pg1-v2 systemd[1]: Starting systemd-timedated.service - Time & Date Service...
+1760514688.314305 eltex-practice2-pg1-v2 dbus-daemon[681]: [system] Successfully activated service 'org.freedesktop.timedate1'
+1760514688.314623 eltex-practice2-pg1-v2 systemd[1]: Started systemd-timedated.service - Time & Date Service.
+1760514689.205227 eltex-practice2-pg1-v2 systemd[1]: Finished snapd.seeded.service - Wait until snapd is fully seeded.
+1760514689.205846 eltex-practice2-pg1-v2 systemd[1]: snapd.autoimport.service - Auto import assertions from block devices was skipped because no trigger condition checks were met.
+1760514689.205965 eltex-practice2-pg1-v2 systemd[1]: Reached target multi-user.target - Multi-User System.
+1760514689.206015 eltex-practice2-pg1-v2 systemd[1]: Reached target graphical.target - Graphical Interface.
+1760514689.210698 eltex-practice2-pg1-v2 systemd[1]: Starting systemd-update-utmp-runlevel.service - Record Runlevel Change in UTMP...
+1760514689.215278 eltex-practice2-pg1-v2 systemd[1]: systemd-update-utmp-runlevel.service: Deactivated successfully.
+1760514689.215394 eltex-practice2-pg1-v2 systemd[1]: Finished systemd-update-utmp-runlevel.service - Record Runlevel Change in UTMP.
+1760514689.218547 eltex-practice2-pg1-v2 systemd[1]: Startup finished in 2.603s (kernel) + 10.545s (userspace) = 13.149s.
+1760514689.303709 eltex-practice2-pg1-v2 systemd[1]: dmesg.service: Deactivated successfully.
+1760514689.458551 eltex-practice2-pg1-v2 ModemManager[723]: <msg> [base-manager] couldn't check support for device '/sys/devices/pci0000:00/0000:00:12.0': not supported by any plugin
+1760514693.668627 eltex-practice2-pg1-v2 snapd[691]: daemon.go:548: gracefully waiting for running hooks
+1760514693.668627 eltex-practice2-pg1-v2 snapd[691]: daemon.go:550: done waiting for running hooks
+1760514696.668772 eltex-practice2-pg1-v2 snapd[691]: overlord.go:518: Released state lock file
+1760514696.668772 eltex-practice2-pg1-v2 snapd[691]: daemon stop requested to wait for socket activation
+1760514696.670299 eltex-practice2-pg1-v2 systemd[1]: snapd.service: Deactivated successfully.
+                                                        0000: 00 00 00 00  00 00 00 00  00 00 00 00  00 00 00 00    ................
+                                                        0010: 00 00 00 00  00 00 00 00  00 00 00 00  00 00 00 00    ................
+                                                         (g-io-error-quark, 0)
+                                                        0000: 00 00 00 00  00 00 00 00  00 00 00 00  00 00 00 00    ................
+                                                        0010: 00 00 00 00  00 00 00 00  00 00 00 00  00 00 00 00    ................
+                                                         (g-io-error-quark, 0)
+                                                        0000: 00 00 00 00  00 00 00 00  00 00 00 00  00 00 00 00    ................
+                                                        0010: 00 00 00 00  00 00 00 00  00 00 00 00  00 00 00 00    ................
+                                                         (g-io-error-quark, 0)
+                                                         0000: 00 00 00 00  00 00 00 00  00 00 00 00  00 00 00 00    ................
+                                                         0010: 00 00 00 00  00 00 00 00  00 00 00 00  00 00 00 00    ................
+                                                          (g-io-error-quark, 0)
+                                                         0000: 00 00 00 00  00 00 00 00  00 00 00 00  00 00 00 00    ................
+                                                         0010: 00 00 00 00  00 00 00 00  00 00 00 00  00 00 00 00    ................
+                                                          (g-io-error-quark, 0)
+                                                         0000: 00 00 00 00  00 00 00 00  00 00 00 00  00 00 00 00    ................
+                                                         0010: 00 00 00 00  00 00 00 00  00 00 00 00  00 00 00 00    ................
+                                                          (g-io-error-quark, 0)
+                                                         0000: 00 00 00 00  00 00 00 00  00 00 00 00  00 00 00 00    ................
+                                                         0010: 00 00 00 00  00 00 00 00  00 00 00 00  00 00 00 00    ................
+                                                          (g-io-error-quark, 0)
+                                                         0000: 00 00 00 00  00 00 00 00  00 00 00 00  00 00 00 00    ................
+                                                         0010: 00 00 00 00  00 00 00 00  00 00 00 00  00 00 00 00    ................
+                                                          (g-io-error-quark, 0)
+                                                         0000: 00 00 00 00  00 00 00 00  00 00 00 00  00 00 00 00    ................
+                                                         0010: 00 00 00 00  00 00 00 00  00 00 00 00  00 00 00 00    ................
+                                                          (g-io-error-quark, 0)
+root@eltex-practice2-pg1-v2:~# find /var/log -type f -name 'auth.log*'
+/var/log/auth.log
+/var/log/auth.log.1
+root@eltex-practice2-pg1-v2:~# sudo awk '{
+    # источник обычно 5-е поле (формат логов syslog)
+    source=
+    # объединяем сообщение начиная с 6-го поля
+    msg=
+    for(i=6;i<=NF;i++){msg=msg   }
+    print source, msg
+}' /var/log/auth.log | sed 's/\[[0-9]*\]//' | sort
+authentication failure; logname=root uid=1001 euid=0 tty=/dev/pts/0 ruser=user1 rhost= user=user1
+password expiry for user1
+password expiry for user2
+password expiry for user3
+publickey for root from 172.16.8.4 port 50830 ssh2: RSA SHA256:q7GKOzteC9HMA2vO/zD6i30FfbnwjtO6l7Bu+GCsm6Y
+session 686 of user root.
+session closed for user root
+session closed for user user1
+session closed for user user2
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=1001)
+session opened for user user1(uid=1001) by root(uid=0)
+: TTY=pts/0 ; PWD=/root ; USER=root ; COMMAND=/bin/dmesg
+: TTY=pts/0 ; PWD=/root ; USER=root ; COMMAND=/usr/bin/apt install bzip2
+: TTY=pts/0 ; PWD=/root ; USER=root ; COMMAND=/usr/bin/apt update
+: TTY=pts/0 ; PWD=/root ; USER=root ; COMMAND=/usr/bin/awk '{ #012 # источник обычно 5-е поле (формат логов syslog)#012 source=#012 # объединяем сообщение начиная с 6-го поля#012 msg=#012 for(i=6;i<=NF;i++){msg=msg   }#012 print source, msg#012}' /var/log/auth.log
+: TTY=pts/0 ; PWD=/root ; USER=root ; COMMAND=/usr/bin/chage -M 10 user*
+: TTY=pts/0 ; PWD=/root ; USER=root ; COMMAND=/usr/bin/chage -M 10 user1
+: TTY=pts/0 ; PWD=/root ; USER=root ; COMMAND=/usr/bin/chage -M 10 user2
+: TTY=pts/0 ; PWD=/root ; USER=root ; COMMAND=/usr/bin/chage -M 10 user3
+: TTY=pts/0 ; PWD=/root ; USER=root ; COMMAND=/usr/bin/chmod 4750 /usr/local/bin/showdmesg.sh
+: TTY=pts/0 ; PWD=/root ; USER=root ; COMMAND=/usr/bin/chmod +x /usr/local/bin/showdmesg.sh
+: TTY=pts/0 ; PWD=/root ; USER=root ; COMMAND=/usr/bin/chown root:user2 /usr/local/bin/showdmesg.sh
+: TTY=pts/0 ; PWD=/root ; USER=root ; COMMAND=/usr/bin/date '+Текущая дата и время: %Y-%m-%d %H:%M:%S'
+: TTY=pts/0 ; PWD=/root ; USER=root ; COMMAND=/usr/bin/date '+Текущая дата и время: %Y-%m-%d %H:%M:%S'
+: TTY=pts/0 ; PWD=/root ; USER=root ; COMMAND=/usr/bin/date '+Текущая дата и время: %Y-%m-%d %H:%M:%S'
+: TTY=pts/0 ; PWD=/root ; USER=root ; COMMAND=/usr/bin/date '+Текущая дата и время: %Y-%m-%d %H:%M:%S'
+: TTY=pts/0 ; PWD=/root ; USER=root ; COMMAND=/usr/bin/echo 'Максим Аникеев' + date '+Текущая дата и время: %Y-%m-%d %H:%M:%S'
+: TTY=pts/0 ; PWD=/root ; USER=root ; COMMAND=/usr/bin/rsync -avcn /tmp/archive_mount/etc_backup/ /root/etc_backup/
+: TTY=pts/0 ; PWD=/root ; USER=root ; COMMAND=/usr/bin/tar -czf /root/etc_backup.tar.gz -C /root etc_backup
+: TTY=pts/0 ; PWD=/root ; USER=root ; COMMAND=/usr/bin/tar -xjf /root/etc_backup_bzip2.tar.bz2 -C /tmp/archive_mount
+: TTY=pts/0 ; PWD=/root ; USER=root ; COMMAND=/usr/bin/tee /etc/motd
+: TTY=pts/0 ; PWD=/root ; USER=root ; COMMAND=/usr/bin/tee /etc/motd
+: TTY=pts/0 ; PWD=/root ; USER=root ; COMMAND=/usr/bin/tee /etc/motd
+: TTY=pts/0 ; PWD=/root ; USER=root ; COMMAND=/usr/bin/tee /etc/motd
+: TTY=pts/0 ; PWD=/root ; USER=root ; COMMAND=/usr/bin/tee /etc/motd
+: TTY=pts/0 ; PWD=/root ; USER=root ; COMMAND=/usr/bin/tee /etc/motd
+: TTY=pts/0 ; PWD=/root ; USER=root ; COMMAND=/usr/bin/tee /etc/motd
+: TTY=pts/0 ; PWD=/root ; USER=root ; COMMAND=/usr/bin/tee /etc/motd
+: TTY=pts/0 ; PWD=/root ; USER=root ; COMMAND=/usr/bin/tee /etc/motd
+: TTY=pts/0 ; PWD=/root ; USER=root ; COMMAND=/usr/bin/tee /etc/motd
+: TTY=pts/0 ; PWD=/root ; USER=root ; COMMAND=/usr/bin/tee /etc/motd
+: TTY=pts/0 ; PWD=/root ; USER=root ; COMMAND=/usr/sbin/sysctl -w kernel.dmesg_restrict=0
+: TTY=pts/0 ; PWD=/root ; USER=root ; COMMAND=/usr/sbin/sysctl -w kernel.dmesg_restrict=0
+: TTY=pts/0 ; PWD=/root ; USER=root ; COMMAND=/usr/sbin/visudo
+: TTY=pts/0 ; PWD=/root ; USER=root ; COMMAND=/usr/sbin/visudo
+user1) root on pts/0
+user1) root on pts/0
+user1) root on pts/0
+user1) root on pts/0
+user1) root on pts/0
+user2) root on pts/0
+user2) root on pts/0
+user2) root on pts/0
+user2) root on pts/0
+: user NOT in sudoers ; TTY=pts/0 ; PWD=/root ; USER=root ; COMMAND=/usr/bin/chmod +x /usr/local/bin/showdmesg.sh
+: user NOT in sudoers ; TTY=pts/0 ; PWD=/root ; USER=root ; COMMAND=/usr/bin/tee -a /etc/sysctl.conf
+: user NOT in sudoers ; TTY=pts/0 ; PWD=/root ; USER=root ; COMMAND=/usr/sbin/sysctl -w kernel.dmesg_restrict=0
+: user NOT in sudoers ; TTY=pts/0 ; PWD=/root ; USER=root ; COMMAND=/usr/sbin/sysctl -w kernel.dmesg_restrict=0
+root@eltex-practice2-pg1-v2:~# find /var/log -type f -name 'auth.log*' -exec awk '{
+    source=; msg=; for(i=6;i<=NF;i++){msg=msg   } print source
+}' {} \; | sed 's/\[[0-9]*\]//' | sort | uniq -c | sort -nr
+   1622 session
+     39 :
+     38 rules
+     25 user3)
+     17 login
+     16 loading,
+     14 user1)
+     13 password
+     12 'tech'
+     12 system
+     12 from
+     12 disconnect
+     10 the
+     10 publickey
+      9 user2)
+      6 user
+      6 listening
+      6 group:
+      6 garbage
+      6 added
+      5 user:
+      5 seat
+      5 closed
+      4 is
+      3 signal
+      3 authentication
+      2 'user3'
+      2 'user2'
+      2 'user1'
+      2 /run/nologin,
+      2 root)
+      2 of
+      1 unable
+      1 SU
+      1 shadow
+      1 group
+      1 for
+      1 adding
+      1 558
+      1 378
+      1 375
+      1 369
+      1 367
+      1 32
+      1 3
+      1 28
+      1 24
+      1 236
+      1 22
+      1 2
+root@eltex-practice2-pg1-v2:~# awk -F: '==/usr/sbin/nologin {print ,,}' /etc/passwd | while read user uid gid; do
+    # Найти имя основной группы по GID
+    main_group=
+    # Найти все второстепенные группы, где встречается пользователь
+    extra_groups=
+    # Объединяем все группы в один список
+    all_groups=
+    if [ -n  ]; then
+        all_groups=,
+    fi
+    echo , , 
+done | sort -t, -k1,1nr
+65534, nobody, nogroup
+1003, user3, user3,users
+998, systemd-network, systemd-network
+997, systemd-timesync, systemd-timesync
+992, systemd-resolve, systemd-resolve
+991, polkitd, polkitd
+989, fwupd-refresh, fwupd-refresh
+109, sshd, nogroup
+108, usbmux, plugdev
+107, landscape, landscape
+105, tcpdump, tcpdump
+104, uuidd, uuidd
+103, syslog, syslog,adm
+101, messagebus, messagebus
+42, _apt, nogroup
+39, irc, irc
+38, list, list
+34, backup, backup
+33, www-data, www-data
+13, proxy, proxy
+10, uucp, uucp
+9, news, news
+8, mail, mail
+7, lp, lp
+6, man, man
+5, games, games
+3, sys, sys
+2, bin, bin
+1, daemon, daemon
+eltex-users
+root@eltex-practice2-pg1-v2:~# dmesg | grep 'kernel'
+[    0.043255] Booting paravirtualized kernel on KVM
+[    0.044260] Unknown kernel command line parameters BOOT_IMAGE=/vmlinuz-6.8.0-55-generic, will be passed to user space.
+[    0.100294] Memory: 3933488K/4193760K available (22528K kernel code, 4443K rwdata, 14344K rodata, 4988K init, 4716K bss, 260012K reserved, 0K cma-reserved)
+[    0.477787] Loaded X.509 cert 'Build time autogenerated kernel key: e0bedf6fa049a1e09bd65ebab3904f14cdd5bc68'
+[    0.621458] Loaded X.509 cert 'Build time autogenerated kernel key: e0bedf6fa049a1e09bd65ebab3904f14cdd5bc68'
+[    0.641695] Freeing unused kernel image (initmem) memory: 4988K
+[    0.642356] Write protecting the kernel read-only data: 38912k
+[    0.643313] Freeing unused kernel image (rodata/data gap) memory: 2040K
+[    4.081160] systemd[1]: Listening on systemd-udevd-kernel.socket - udev Kernel Socket.
+[    4.089998] systemd[1]: Mounting sys-kernel-debug.mount - Kernel Debug File System...
+[    4.093417] systemd[1]: Mounting sys-kernel-tracing.mount - Kernel Trace File System...
+root@eltex-practice2-pg1-v2:~# awk '
+/Start-Date:/ {start=$2" "$3}
+/Commandline:/ {cmd=""; for(i=2;i<=NF;i++) cmd=cmd $i " "}
+/End-Date:/ {end=$2" "$3; print "Commandline: " cmd "; Start-Date: " start "; End-Date: " end}
+' /var/log/apt/history.log
+Commandline: apt-get install --reinstall apt ; Start-Date: 2025-02-16 20:51:22; End-Date: 2025-02-16 20:51:24
+Commandline: apt-get install --reinstall base-files ; Start-Date: 2025-02-16 20:51:26; End-Date: 2025-02-16 20:51:28
+Commandline: apt-get install --reinstall base-passwd ; Start-Date: 2025-02-16 20:51:31; End-Date: 2025-02-16 20:51:32
+Commandline: apt-get install --reinstall bash ; Start-Date: 2025-02-16 20:51:35; End-Date: 2025-02-16 20:51:37
+Commandline: apt-get install --reinstall bsdutils ; Start-Date: 2025-02-16 20:51:39; End-Date: 2025-02-16 20:51:41
+Commandline: apt-get install --reinstall coreutils ; Start-Date: 2025-02-16 20:51:44; End-Date: 2025-02-16 20:51:45
+Commandline: apt-get install --reinstall dash ; Start-Date: 2025-02-16 20:51:48; End-Date: 2025-02-16 20:51:49
+Commandline: apt-get install --reinstall debconf ; Start-Date: 2025-02-16 20:51:52; End-Date: 2025-02-16 20:51:53
+Commandline: apt-get install --reinstall debianutils ; Start-Date: 2025-02-16 20:51:56; End-Date: 2025-02-16 20:51:58
+Commandline: apt-get install --reinstall diffutils ; Start-Date: 2025-02-16 20:52:00; End-Date: 2025-02-16 20:52:02
+Commandline: apt-get install --reinstall dpkg ; Start-Date: 2025-02-16 20:52:04; End-Date: 2025-02-16 20:52:06
+Commandline: apt-get install --reinstall e2fsprogs ; Start-Date: 2025-02-16 20:52:09; End-Date: 2025-02-16 20:52:10
+Commandline: apt-get install --reinstall findutils ; Start-Date: 2025-02-16 20:52:13; End-Date: 2025-02-16 20:52:14
+Commandline: apt-get install --reinstall gcc-14-base:amd64 ; Start-Date: 2025-02-16 20:52:17; End-Date: 2025-02-16 20:52:18
+Commandline: apt-get install --reinstall gpgv ; Start-Date: 2025-02-16 20:52:21; End-Date: 2025-02-16 20:52:23
+Commandline: apt-get install --reinstall grep ; Start-Date: 2025-02-16 20:52:25; End-Date: 2025-02-16 20:52:27
+Commandline: apt-get install --reinstall gzip ; Start-Date: 2025-02-16 20:52:29; End-Date: 2025-02-16 20:52:31
+Commandline: apt-get install --reinstall hostname ; Start-Date: 2025-02-16 20:52:34; End-Date: 2025-02-16 20:52:35
+Commandline: apt-get install --reinstall init-system-helpers ; Start-Date: 2025-02-16 20:52:38; End-Date: 2025-02-16 20:52:39
+Commandline: apt-get install --reinstall libacl1:amd64 ; Start-Date: 2025-02-16 20:52:42; End-Date: 2025-02-16 20:52:43
+Commandline: apt-get install --reinstall libapt-pkg6.0t64:amd64 ; Start-Date: 2025-02-16 20:52:46; End-Date: 2025-02-16 20:52:47
+Commandline: apt-get install --reinstall libassuan0:amd64 ; Start-Date: 2025-02-16 20:52:50; End-Date: 2025-02-16 20:52:51
+Commandline: apt-get install --reinstall libattr1:amd64 ; Start-Date: 2025-02-16 20:52:54; End-Date: 2025-02-16 20:52:56
+Commandline: apt-get install --reinstall libaudit-common ; Start-Date: 2025-02-16 20:52:58; End-Date: 2025-02-16 20:53:00
+Commandline: apt-get install --reinstall libaudit1:amd64 ; Start-Date: 2025-02-16 20:53:02; End-Date: 2025-02-16 20:53:04
+Commandline: apt-get install --reinstall libblkid1:amd64 ; Start-Date: 2025-02-16 20:53:06; End-Date: 2025-02-16 20:53:08
+Commandline: apt-get install --reinstall libbz2-1.0:amd64 ; Start-Date: 2025-02-16 20:53:11; End-Date: 2025-02-16 20:53:12
+Commandline: apt-get install --reinstall libc-bin ; Start-Date: 2025-02-16 20:53:15; End-Date: 2025-02-16 20:53:17
+Commandline: apt-get install --reinstall libc6:amd64 ; Start-Date: 2025-02-16 20:53:19; End-Date: 2025-02-16 20:53:22
+Commandline: apt-get install --reinstall libcap-ng0:amd64 ; Start-Date: 2025-02-16 20:53:25; End-Date: 2025-02-16 20:53:26
+Commandline: apt-get install --reinstall libcap2:amd64 ; Start-Date: 2025-02-16 20:53:29; End-Date: 2025-02-16 20:53:30
+Commandline: apt-get install --reinstall libcom-err2:amd64 ; Start-Date: 2025-02-16 20:53:33; End-Date: 2025-02-16 20:53:34
+Commandline: apt-get install --reinstall libcrypt1:amd64 ; Start-Date: 2025-02-16 20:53:37; End-Date: 2025-02-16 20:53:38
+Commandline: apt-get install --reinstall libdebconfclient0:amd64 ; Start-Date: 2025-02-16 20:53:41; End-Date: 2025-02-16 20:53:42
+Commandline: apt-get install --reinstall libext2fs2t64:amd64 ; Start-Date: 2025-02-16 20:53:45; End-Date: 2025-02-16 20:53:46
+Commandline: apt-get install --reinstall libffi8:amd64 ; Start-Date: 2025-02-16 20:53:49; End-Date: 2025-02-16 20:53:50
+Commandline: apt-get install --reinstall libgcc-s1:amd64 ; Start-Date: 2025-02-16 20:53:53; End-Date: 2025-02-16 20:53:54
+Commandline: apt-get install --reinstall libgcrypt20:amd64 ; Start-Date: 2025-02-16 20:53:57; End-Date: 2025-02-16 20:53:59
+Commandline: apt-get install --reinstall libgmp10:amd64 ; Start-Date: 2025-02-16 20:54:01; End-Date: 2025-02-16 20:54:03
+Commandline: apt-get install --reinstall libgnutls30t64:amd64 ; Start-Date: 2025-02-16 20:54:05; End-Date: 2025-02-16 20:54:07
+Commandline: apt-get install --reinstall libgpg-error0:amd64 ; Start-Date: 2025-02-16 20:54:10; End-Date: 2025-02-16 20:54:11
+Commandline: apt-get install --reinstall libhogweed6t64:amd64 ; Start-Date: 2025-02-16 20:54:14; End-Date: 2025-02-16 20:54:15
+Commandline: apt-get install --reinstall libidn2-0:amd64 ; Start-Date: 2025-02-16 20:54:18; End-Date: 2025-02-16 20:54:19
+Commandline: apt-get install --reinstall liblz4-1:amd64 ; Start-Date: 2025-02-16 20:54:22; End-Date: 2025-02-16 20:54:23
+Commandline: apt-get install --reinstall liblzma5:amd64 ; Start-Date: 2025-02-16 20:54:26; End-Date: 2025-02-16 20:54:27
+Commandline: apt-get install --reinstall libmd0:amd64 ; Start-Date: 2025-02-16 20:54:30; End-Date: 2025-02-16 20:54:32
+Commandline: apt-get install --reinstall libmount1:amd64 ; Start-Date: 2025-02-16 20:54:34; End-Date: 2025-02-16 20:54:36
+Commandline: apt-get install --reinstall libncursesw6:amd64 ; Start-Date: 2025-02-16 20:54:38; End-Date: 2025-02-16 20:54:39
+Commandline: apt-get install --reinstall libnettle8t64:amd64 ; Start-Date: 2025-02-16 20:54:42; End-Date: 2025-02-16 20:54:43
+Commandline: apt-get install --reinstall libnpth0t64:amd64 ; Start-Date: 2025-02-16 20:54:46; End-Date: 2025-02-16 20:54:48
+Commandline: apt-get install --reinstall libp11-kit0:amd64 ; Start-Date: 2025-02-16 20:54:50; End-Date: 2025-02-16 20:54:52
+Commandline: apt-get install --reinstall libpam-modules:amd64 ; Start-Date: 2025-02-16 20:54:54; End-Date: 2025-02-16 20:54:56
+Commandline: apt-get install --reinstall libpam-modules-bin ; Start-Date: 2025-02-16 20:54:58; End-Date: 2025-02-16 20:55:00
+Commandline: apt-get install --reinstall libpam-runtime ; Start-Date: 2025-02-16 20:55:03; End-Date: 2025-02-16 20:55:04
+Commandline: apt-get install --reinstall libpam0g:amd64 ; Start-Date: 2025-02-16 20:55:07; End-Date: 2025-02-16 20:55:08
+Commandline: apt-get install --reinstall libpcre2-8-0:amd64 ; Start-Date: 2025-02-16 20:55:11; End-Date: 2025-02-16 20:55:12
+Commandline: apt-get install --reinstall libproc2-0:amd64 ; Start-Date: 2025-02-16 20:55:15; End-Date: 2025-02-16 20:55:16
+Commandline: apt-get install --reinstall libseccomp2:amd64 ; Start-Date: 2025-02-16 20:55:19; End-Date: 2025-02-16 20:55:20
+Commandline: apt-get install --reinstall libselinux1:amd64 ; Start-Date: 2025-02-16 20:55:23; End-Date: 2025-02-16 20:55:24
+Commandline: apt-get install --reinstall libsemanage-common ; Start-Date: 2025-02-16 20:55:27; End-Date: 2025-02-16 20:55:28
+Commandline: apt-get install --reinstall libsemanage2:amd64 ; Start-Date: 2025-02-16 20:55:31; End-Date: 2025-02-16 20:55:32
+Commandline: apt-get install --reinstall libsepol2:amd64 ; Start-Date: 2025-02-16 20:55:35; End-Date: 2025-02-16 20:55:36
+Commandline: apt-get install --reinstall libsmartcols1:amd64 ; Start-Date: 2025-02-16 20:55:38; End-Date: 2025-02-16 20:55:40
+Commandline: apt-get install --reinstall libss2:amd64 ; Start-Date: 2025-02-16 20:55:42; End-Date: 2025-02-16 20:55:44
+Commandline: apt-get install --reinstall libssl3t64:amd64 ; Start-Date: 2025-02-16 20:55:46; End-Date: 2025-02-16 20:55:48
+Commandline: apt-get install --reinstall libstdc++6:amd64 ; Start-Date: 2025-02-16 20:55:51; End-Date: 2025-02-16 20:55:52
+Commandline: apt-get install --reinstall libsystemd0:amd64 ; Start-Date: 2025-02-16 20:55:55; End-Date: 2025-02-16 20:55:56
+Commandline: apt-get install --reinstall libtasn1-6:amd64 ; Start-Date: 2025-02-16 20:55:59; End-Date: 2025-02-16 20:56:00
+Commandline: apt-get install --reinstall libtinfo6:amd64 ; Start-Date: 2025-02-16 20:56:03; End-Date: 2025-02-16 20:56:04
+Commandline: apt-get install --reinstall libudev1:amd64 ; Start-Date: 2025-02-16 20:56:07; End-Date: 2025-02-16 20:56:08
+Commandline: apt-get install --reinstall libunistring5:amd64 ; Start-Date: 2025-02-16 20:56:11; End-Date: 2025-02-16 20:56:13
+Commandline: apt-get install --reinstall libuuid1:amd64 ; Start-Date: 2025-02-16 20:56:15; End-Date: 2025-02-16 20:56:17
+Commandline: apt-get install --reinstall libxxhash0:amd64 ; Start-Date: 2025-02-16 20:56:19; End-Date: 2025-02-16 20:56:21
+Commandline: apt-get install --reinstall libzstd1:amd64 ; Start-Date: 2025-02-16 20:56:23; End-Date: 2025-02-16 20:56:25
+Commandline: apt-get install --reinstall login ; Start-Date: 2025-02-16 20:56:28; End-Date: 2025-02-16 20:56:29
+Commandline: apt-get install --reinstall logsave ; Start-Date: 2025-02-16 20:56:32; End-Date: 2025-02-16 20:56:33
+Commandline: apt-get install --reinstall mawk ; Start-Date: 2025-02-16 20:56:36; End-Date: 2025-02-16 20:56:37
+Commandline: apt-get install --reinstall mount ; Start-Date: 2025-02-16 20:56:39; End-Date: 2025-02-16 20:56:41
+Commandline: apt-get install --reinstall ncurses-base ; Start-Date: 2025-02-16 20:56:43; End-Date: 2025-02-16 20:56:45
+Commandline: apt-get install --reinstall ncurses-bin ; Start-Date: 2025-02-16 20:56:47; End-Date: 2025-02-16 20:56:49
+Commandline: apt-get install --reinstall passwd ; Start-Date: 2025-02-16 20:56:52; End-Date: 2025-02-16 20:56:53
+Commandline: apt-get install --reinstall perl-base ; Start-Date: 2025-02-16 20:56:55; End-Date: 2025-02-16 20:56:57
+Commandline: apt-get install --reinstall procps ; Start-Date: 2025-02-16 20:57:00; End-Date: 2025-02-16 20:57:01
+Commandline: apt-get install --reinstall sed ; Start-Date: 2025-02-16 20:57:04; End-Date: 2025-02-16 20:57:05
+Commandline: apt-get install --reinstall sensible-utils ; Start-Date: 2025-02-16 20:57:08; End-Date: 2025-02-16 20:57:09
+Commandline: apt-get install --reinstall sysvinit-utils ; Start-Date: 2025-02-16 20:57:12; End-Date: 2025-02-16 20:57:13
+Commandline: apt-get install --reinstall tar ; Start-Date: 2025-02-16 20:57:16; End-Date: 2025-02-16 20:57:17
+Commandline: apt-get install --reinstall ubuntu-keyring ; Start-Date: 2025-02-16 20:57:20; End-Date: 2025-02-16 20:57:21
+Commandline: apt-get install --reinstall util-linux ; Start-Date: 2025-02-16 20:57:24; End-Date: 2025-02-16 20:57:26
+Commandline: apt-get install --reinstall zlib1g:amd64 ; Start-Date: 2025-02-16 20:57:28; End-Date: 2025-02-16 20:57:30
+Commandline: apt-get --yes -oDebug::pkgDepCache::AutoInstall=yes --force-yes upgrade ; Start-Date: 2025-02-16 20:57:34; End-Date: 2025-02-16 20:57:38
+Commandline: apt-get --yes -oDebug::pkgDepCache::AutoInstall=yes --force-yes dist-upgrade ; Start-Date: 2025-02-16 20:57:39; End-Date: 2025-02-16 20:57:39
+Commandline: apt-get --yes -oDebug::pkgDepCache::AutoInstall=yes install adduser apparmor apport apport-core-dump-handler apt base-passwd bcache-tools btrfs-progs busybox-initramfs ca-certificates cloud-guest-utils cloud-init coreutils cpio cryptsetup cryptsetup-bin curl dbus dbus-bin dbus-daemon dbus-session-bus-common dbus-system-bus-common dbus-user-session debconf dhcpcd-base distro-info-data dmeventd dmsetup dpkg dracut-install e2fsprogs ethtool fdisk fuse3 gawk gcc-14-base gettext-base gir1.2-girepository-2.0 gir1.2-glib-2.0 gpgv init-system-helpers initramfs-tools initramfs-tools-bin initramfs-tools-core iproute2 klibc-utils kmod kpartx libacl1 libaio1t64 libapparmor1 libapt-pkg6.0t64 libargon2-1 libassuan0 libattr1 libaudit-common libaudit1 libblkid1 libbpf1 libbrotli1 libbsd0 libbz2-1.0 libc6 libcap-ng0 libcap2 libcap2-bin libcbor0.10 libcom-err2 libcrypt1 libcryptsetup12 libcurl4t64 libdb5.3t64 libdbus-1-3 libdebconfclient0 libdevmapper-event1.02.1 libdevmapper1.02.1 libdrm-common libdrm2 libedit2 libelf1t64 libexpat1 libext2fs2t64 libfdisk1 libffi8 libfido2-1 libfuse3-3 libgcc-s1 libgcrypt20 libgdbm-compat4t64 libgdbm6t64 libgirepository-1.0-1 libglib2.0-0t64 libgmp10 libgnutls30t64 libgpg-error0 libgssapi-krb5-2 libhogweed6t64 libicu74 libidn2-0 libinih1 libintl-perl libisns0t64 libjson-c5 libk5crypto3 libkeyutils1 libklibc libkmod2 libkrb5-3 libkrb5support0 libldap2 liblvm2cmd2.03 liblz4-1 liblzma5 liblzo2-2 libmd0 libmnl0 libmodule-find-perl libmodule-scandeps-perl libmount1 libmpfr6 libncursesw6 libnetplan1 libnettle8t64 libnghttp2-14 libnpth0t64 libopeniscsiusr libp11-kit0 libpam-modules libpam-modules-bin libpam-runtime libpam-systemd libpam0g libpci3 libpcre2-8-0 libperl5.38t64 libpopt0 libproc-processtable-perl libproc2-0 libpsl5t64 libpython3-stdlib libpython3.12-minimal libpython3.12-stdlib libreadline8t64 libreiserfscore0t64 librtmp1 libsasl2-2 libsasl2-modules-db libseccomp2 libselinux1 libsemanage-common libsemanage2 libsepol2 libsgutils2-1.46-2 libsigsegv2 libsmartcols1 libsort-naturally-perl libsqlite3-0 libss2 libssh-4 libssl3t64 libstdc++6 libsystemd-shared libsystemd0 libtasn1-6 libterm-readkey-perl libtinfo6 libtirpc-common libtirpc3t64 libudev1 libunistring5 liburcu8t64 libusb-1.0-0 libuuid1 libxtables12 libxxhash0 libyaml-0-2 libzstd1 linux-base logsave lsb-base lsb-release lvm2 mdadm media-types mount multipath-tools needrestart netbase netplan-generator netplan.io open-iscsi openssh-client openssl passwd pci.ids pciutils perl perl-base perl-modules-5.38 pollinate procps python-apt-common python3 python3-apport python3-apt python3-attr python3-blinker python3-certifi python3-cffi-backend python3-chardet python3-click python3-colorama python3-configobj python3-cryptography python3-dbus python3-debconf python3-distro python3-distro-info python3-distupgrade python3-gi python3-httplib2 python3-idna python3-jinja2 python3-json-pointer python3-jsonpatch python3-jsonschema python3-jwt python3-launchpadlib python3-lazr.restfulclient python3-lazr.uri python3-markupsafe python3-minimal python3-netplan python3-oauthlib python3-pkg-resources python3-problem-report python3-pyparsing python3-pyrsistent python3-requests python3-serial python3-six python3-update-manager python3-urllib3 python3-wadllib python3-xkit python3-yaml python3.12 python3.12-minimal readline-common sed sensible-utils sg3-utils sg3-utils-udev snapd squashfs-tools sudo systemd systemd-dev systemd-resolved systemd-sysv sysvinit-utils tar tzdata ubuntu-drivers-common ubuntu-keyring ubuntu-release-upgrader-core ubuntu-server-minimal ucf udev unattended-upgrades unminimize usbutils xfsprogs xxd xz-utils zlib1g lxd-installer ; Start-Date: 2025-02-16 20:57:42; End-Date: 2025-02-16 20:58:20
+Commandline: apt-get install --reinstall -y gdisk zstd unattended-upgrades xfsprogs multipath-tools kpartx cloud-init squashfs-tools sg3-utils pollinate packagekit-tools polkitd xml-core needrestart mdadm lvm2 libterm-readkey-perl libsort-naturally-perl libproc-processtable-perl:amd64 libmodule-scandeps-perl libmodule-find-perl libldap-common libintl-xs-perl libintl-perl libglib2.0-bin gpg-wks-client gnupg keyboxd gpgsm gpg-agent pinentry-curses gpg gnupg-utils finalrd fdisk eatmydata dmeventd dirmngr gpgconf curl initramfs-tools linux-base initramfs-tools-core cryptsetup cryptsetup-bin btrfs-progs bcache-tools appstream libsasl2-2:amd64 xz-utils xauth ubuntu-release-upgrader-core plymouth openssh-client libx11-data libedit2:amd64 groff-base gettext-base fuse3 cpio apparmor xxd xdg-user-dirs ucf systemd-timesyncd systemd-resolved sudo shared-mime-info python3-pygments networkd-dispatcher netplan.io cloud-guest-utils thin-provisioning-tools software-properties-common snapd iproute2 libcap2-bin libtirpc-common libpam-systemd:amd64 coreutils ncurses-bin mawk libsemanage-common bash base-passwd tar sysvinit-utils sensible-utils sed apt init-system-helpers hostname gzip grep gpgv findutils diffutils debconf debianutils dash adduser kmod usbutils pciutils sgml-base perl libperl5.38t64:amd64 dmsetup dhcpcd-base open-iscsi udev gawk python3-chardet lsb-release dbus-daemon dbus-bin systemd-sysv systemd python3 python3.12 readline-common ethtool netplan-generator libpam-cap:amd64 libnss-systemd:amd64 console-setup keyboard-configuration xkb-data liblocale-gettext-perl kbd ca-certificates openssl libpam-modules:amd64 python3-minimal python3.12-minimal procps passwd libpam-modules-bin logsave libpam-runtime libaudit-common mount e2fsprogs util-linux perl-base bsdutils apport libc-bin base-files login dpkg ; Start-Date: 2025-02-16 20:58:40; End-Date: 2025-02-16 20:59:23
+Commandline: apt-get install --reinstall -y cryptsetup-initramfs dbus dbus-session-bus-common dbus-system-bus-common distro-info-data dracut-install gcc-14-base:amd64 gnupg-l10n iso-codes libapt-pkg6.0t64:amd64 libc6:amd64 libcbor0.10:amd64 libcryptsetup12:amd64 libdb5.3t64:amd64 libdbus-1-3:amd64 libexpat1:amd64 libfuse3-3:amd64 libgcrypt20:amd64 libglib2.0-0t64:amd64 libgmp10:amd64 libgnutls30t64:amd64 libgpg-error0:amd64 libidn2-0:amd64 libjson-c5:amd64 libklibc:amd64 libkrb5-3:amd64 libksba8:amd64 libldap2:amd64 liblzma5:amd64 liblzo2-2:amd64 libmpfr6:amd64 libnettle8t64:amd64 libnghttp2-14:amd64 libopeniscsiusr libp11-kit0:amd64 libpam0g:amd64 libpcre2-8-0:amd64 libpng16-16t64:amd64 libpolkit-gobject-1-0:amd64 libpopt0:amd64 libproc2-0:amd64 libpython3-stdlib:amd64 libpython3.12-minimal:amd64 libreadline8t64:amd64 libsigsegv2:amd64 libsqlite3-0:amd64 libssh-4:amd64 libstemmer0d:amd64 libsystemd-shared:amd64 libsystemd0:amd64 libtasn1-6:amd64 libtirpc3t64:amd64 libudev1:amd64 libusb-1.0-0:amd64 libxml2:amd64 libxtables12:amd64 lsb-base ncurses-base packagekit perl-modules-5.38 publicsuffix python3-babel python3-certifi python3-colorama python3-dbus python3-gi python3-httplib2 python3-json-pointer python3-jsonpatch python3-jwt python3-launchpadlib python3-lazr.restfulclient python3-lazr.uri python3-markdown-it python3-oauthlib python3-pkg-resources python3-requests python3-rich python3-serial python3-software-properties python3-tz python3-wadllib python3-yaml systemd-dev tzdata ubuntu-drivers-common ; Start-Date: 2025-02-16 20:59:26; End-Date: 2025-02-16 20:59:43
+Commandline: apt-get install -y ubuntu-minimal ubuntu-standard ; Start-Date: 2025-02-16 20:59:50; End-Date: 2025-02-16 21:00:01
+Commandline: apt-get -y --fix-policy install ; Start-Date: 2025-02-16 21:00:04; End-Date: 2025-02-16 21:00:04
+Commandline: apt-get --yes -oDebug::pkgDepCache::AutoInstall=yes install adduser apparmor apport apport-core-dump-handler apport-symptoms appstream apt apt-utils base-files base-passwd bash bash-completion bc bcache-tools bind9-dnsutils bind9-host bind9-libs bolt bsdextrautils bsdutils btrfs-progs busybox-initramfs busybox-static byobu ca-certificates cloud-guest-utils cloud-initramfs-copymods cloud-initramfs-dyn-netconf command-not-found console-setup console-setup-linux coreutils cpio cron cron-daemon-common cryptsetup cryptsetup-bin cryptsetup-initramfs curl dash dbus dbus-bin dbus-daemon dbus-session-bus-common dbus-system-bus-common dbus-user-session debconf debconf-i18n debianutils dhcpcd-base diffutils dirmngr distro-info distro-info-data dmeventd dmidecode dmsetup dosfstools dpkg dracut-install e2fsprogs ed eject ethtool fdisk file finalrd findutils fonts-ubuntu-console friendly-recovery ftp fuse3 fwupd fwupd-signed gawk gcc-14-base gdisk gettext-base gir1.2-girepository-2.0 gir1.2-glib-2.0 gir1.2-packagekitglib-1.0 git git-man gnupg gnupg-l10n gnupg-utils gpg gpg-agent gpg-wks-client gpgconf gpgsm gpgv grep groff-base gzip hdparm hostname htop ibverbs-providers inetutils-telnet info init init-system-helpers initramfs-tools initramfs-tools-bin initramfs-tools-core install-info iproute2 iptables iputils-ping iputils-tracepath iso-codes jq kbd keyboard-configuration keyboxd klibc-utils kmod kpartx krb5-locales landscape-common less libacl1 libaio1t64 libapparmor1 libappstream5 libapt-pkg6.0t64 libarchive13t64 libargon2-1 libassuan0 libatasmart4 libatm1t64 libattr1 libaudit-common libaudit1 libblkid1 libblockdev-crypto3 libblockdev-fs3 libblockdev-loop3 libblockdev-mdraid3 libblockdev-nvme3 libblockdev-part3 libblockdev-swap3 libblockdev-utils3 libblockdev3 libbpf1 libbrotli1 libbsd0 libbytesize-common libbytesize1 libbz2-1.0 libc-bin libc6 libcap-ng0 libcap2 libcap2-bin libcbor0.10 libcom-err2 libcrypt1 libcryptsetup12 libcurl3t64-gnutls libcurl4t64 libdb5.3t64 libdbus-1-3 libdebconfclient0 libdevmapper-event1.02.1 libdevmapper1.02.1 libdrm-common libdrm2 libduktape207 libdw1t64 libedit2 libelf1t64 liberror-perl libestr0 libevdev2 libevent-core-2.1-7t64 libexpat1 libext2fs2t64 libfastjson4 libfdisk1 libffi8 libfido2-1 libflashrom1 libfribidi0 libftdi1-2 libfuse3-3 libfwupd2 libgcc-s1 libgcrypt20 libgdbm-compat4t64 libgdbm6t64 libgirepository-1.0-1 libglib2.0-0t64 libglib2.0-bin libglib2.0-data libgmp10 libgnutls30t64 libgpg-error0 libgpgme11t64 libgpm2 libgssapi-krb5-2 libgstreamer1.0-0 libgudev-1.0-0 libgusb2 libhogweed6t64 libibverbs1 libicu74 libidn2-0 libinih1 libintl-perl libintl-xs-perl libip4tc2 libip6tc2 libisns0t64 libjansson4 libjcat1 libjq1 libjson-c5 libjson-glib-1.0-0 libjson-glib-1.0-common libk5crypto3 libkeyutils1 libklibc libkmod2 libkrb5-3 libkrb5support0 libksba8 libldap-common libldap2 liblmdb0 liblocale-gettext-perl liblvm2cmd2.03 liblz4-1 liblzma5 liblzo2-2 libmagic-mgc libmagic1t64 libmaxminddb0 libmbim-glib4 libmbim-proxy libmbim-utils libmd0 libmm-glib0 libmnl0 libmodule-find-perl libmodule-scandeps-perl libmount1 libmpfr6 libmspack0t64 libncurses6 libncursesw6 libnetfilter-conntrack3 libnetplan1 libnettle8t64 libnewt0.52 libnfnetlink0 libnftables1 libnftnl11 libnghttp2-14 libnl-3-200 libnl-genl-3-200 libnl-route-3-200 libnpth0t64 libnspr4 libnss-systemd libnss3 libntfs-3g89t64 libnuma1 libnvme1t64 libonig5 libopeniscsiusr libp11-kit0 libpackagekit-glib2-18 libpam-cap libpam-modules libpam-modules-bin libpam-runtime libpam-systemd libpam0g libparted2t64 libpcap0.8t64 libpci3 libpcre2-8-0 libperl5.38t64 libpipeline1 libplymouth5 libpng16-16t64 libpolkit-agent-1-0 libpolkit-gobject-1-0 libpopt0 libproc-processtable-perl libproc2-0 libprotobuf-c1 libpsl5t64 libpython3-stdlib libpython3.12-minimal libpython3.12-stdlib libpython3.12t64 libqmi-glib5 libqmi-proxy libqmi-utils libqrtr-glib0 libreadline8t64 libreiserfscore0t64 librtmp1 libsasl2-2 libsasl2-modules libsasl2-modules-db libseccomp2 libselinux1 libsemanage-common libsemanage2 libsensors-config libsensors5 libsepol2 libsgutils2-1.46-2 libsigsegv2 libslang2 libsmartcols1 libsodium23 libsort-naturally-perl libsqlite3-0 libss2 libssh-4 libssl3t64 libstdc++6 libstemmer0d libsystemd-shared libsystemd0 libtasn1-6 libtcl8.6 libterm-readkey-perl libtext-charwidth-perl libtext-iconv-perl libtext-wrapi18n-perl libtinfo6 libtirpc-common libtirpc3t64 libtraceevent1 libtraceevent1-plugin libtracefs1 libtss2-esys-3.0.2-0t64 libtss2-mu-4.0.1-0t64 libtss2-sys1t64 libtss2-tcti-cmd0t64 libtss2-tcti-device0t64 libtss2-tcti-mssim0t64 libtss2-tcti-swtpm0t64 libuchardet0 libudev1 libudisks2-0 libunistring5 libunwind8 liburcu8t64 libusb-1.0-0 libutempter0 libuuid1 libuv1t64 libvolume-key1 libx11-6 libx11-data libxau6 libxcb1 libxdmcp6 libxext6 libxkbcommon0 libxml2 libxmlb2 libxmlsec1t64 libxmlsec1t64-openssl libxmuu1 libxslt1.1 libxtables12 libxxhash0 libyaml-0-2 libzstd1 linux-base locales login logrotate logsave lsb-release lshw lsof lvm2 lxd-agent-loader lxd-installer man-db manpages mawk mdadm media-types modemmanager motd-news-config mount mtr-tiny multipath-tools nano ncurses-base ncurses-bin needrestart netbase netcat-openbsd netplan-generator netplan.io networkd-dispatcher nftables ntfs-3g numactl open-iscsi open-vm-tools openssh-client openssl overlayroot packagekit packagekit-tools parted passwd pastebinit patch pci.ids pciutils perl perl-base perl-modules-5.38 pinentry-curses plymouth plymouth-theme-ubuntu-text polkitd pollinate powermgmt-base procps psmisc publicsuffix python-apt-common python3 python3-apport python3-apt python3-attr python3-automat python3-bcrypt python3-blinker python3-boto3 python3-botocore python3-certifi python3-cffi-backend python3-chardet python3-click python3-colorama python3-commandnotfound python3-configobj python3-constantly python3-cryptography python3-dateutil python3-dbus python3-debconf python3-debian python3-distro python3-distro-info python3-distupgrade python3-gdbm python3-gi python3-hamcrest python3-httplib2 python3-hyperlink python3-idna python3-incremental python3-jmespath python3-jwt python3-launchpadlib python3-lazr.restfulclient python3-lazr.uri python3-magic python3-markdown-it python3-mdurl python3-minimal python3-netifaces python3-netplan python3-newt python3-oauthlib python3-openssl python3-packaging python3-pexpect python3-pkg-resources python3-problem-report python3-ptyprocess python3-pyasn1 python3-pyasn1-modules python3-pygments python3-pyparsing python3-requests python3-rich python3-s3transfer python3-service-identity python3-setuptools python3-six python3-software-properties python3-systemd python3-twisted python3-update-manager python3-urllib3 python3-wadllib python3-yaml python3-zope.interface python3.12 python3.12-minimal readline-common rsync rsyslog run-one sbsigntool screen secureboot-db sed sensible-utils sg3-utils sg3-utils-udev sgml-base shared-mime-info snapd software-properties-common sosreport squashfs-tools strace sudo sysstat systemd systemd-dev systemd-hwe-hwdb systemd-resolved systemd-sysv systemd-timesyncd sysvinit-utils tar tcl tcl8.6 tcpdump telnet thin-provisioning-tools time tmux tnftp tpm-udev trace-cmd tzdata ubuntu-keyring ubuntu-minimal ubuntu-pro-client ubuntu-pro-client-l10n ubuntu-release-upgrader-core ubuntu-server ubuntu-standard ucf udev udisks2 ufw unattended-upgrades update-manager-core update-notifier-common usb-modeswitch usb-modeswitch-data usb.ids usbutils util-linux uuid-runtime vim vim-common vim-runtime vim-tiny wget whiptail xauth xdg-user-dirs xfsprogs xkb-data xml-core xxd xz-utils zerofree zlib1g zstd cloud-init ; Start-Date: 2025-02-16 21:00:10; End-Date: 2025-02-16 21:00:28
+Commandline: apt-get --quiet --assume-yes --option=Dpkg::options::=--force-unsafe-io --option=Dpkg::Options::=--force-confold install grub-pc ; Start-Date: 2025-03-12 18:07:37; End-Date: 2025-03-12 18:08:03
+Commandline: apt-get --quiet --assume-yes --option=Dpkg::options::=--force-unsafe-io --option=Dpkg::Options::=--force-confold install linux-generic ; Start-Date: 2025-03-12 18:08:37; End-Date: 2025-03-12 18:11:58
+Commandline: apt-get --quiet --assume-yes --option=Dpkg::options::=--force-unsafe-io --option=Dpkg::Options::=--force-confold install openssh-server ; Start-Date: 2025-03-12 18:12:45; End-Date: 2025-03-12 18:13:11
+Commandline: /usr/bin/unattended-upgrades -v ; Start-Date: 2025-03-12 18:13:21; End-Date: 2025-03-12 18:14:11
+Commandline: apt dist-upgrade ; Start-Date: 2025-03-12 18:19:08; End-Date: 2025-03-12 18:21:04
+Commandline: apt install vim qemu-guest-agent ; Start-Date: 2025-03-12 18:21:23; End-Date: 2025-03-12 18:21:31
+Commandline: /usr/bin/unattended-upgrade ; Start-Date: 2025-10-16 06:26:13; End-Date: 2025-10-16 06:31:16
+Commandline: /usr/bin/unattended-upgrade ; Start-Date: 2025-10-16 06:31:23; End-Date: 2025-10-16 06:34:02
+Commandline: /usr/bin/unattended-upgrade ; Start-Date: 2025-10-16 06:34:07; End-Date: 2025-10-16 06:36:37
+Commandline: /usr/bin/unattended-upgrade ; Start-Date: 2025-10-16 06:36:44; End-Date: 2025-10-16 06:38:11
+Commandline: /usr/bin/unattended-upgrade ; Start-Date: 2025-10-16 06:38:15; End-Date: 2025-10-16 06:39:59
+Commandline: /usr/bin/unattended-upgrade ; Start-Date: 2025-10-16 06:40:14; End-Date: 2025-10-16 06:42:47
+Commandline: /usr/bin/unattended-upgrade ; Start-Date: 2025-10-16 06:42:50; End-Date: 2025-10-16 06:48:01
+Commandline: /usr/bin/unattended-upgrade ; Start-Date: 2025-10-16 06:48:04; End-Date: 2025-10-16 06:48:30
+Commandline: /usr/bin/unattended-upgrade ; Start-Date: 2025-10-16 06:48:38; End-Date: 2025-10-16 06:50:53
+Commandline: /usr/bin/unattended-upgrade ; Start-Date: 2025-10-16 06:51:02; End-Date: 2025-10-16 06:53:15
+Commandline: /usr/bin/unattended-upgrade ; Start-Date: 2025-10-16 06:53:23; End-Date: 2025-10-16 07:08:53
+Commandline: /usr/bin/unattended-upgrade ; Start-Date: 2025-10-16 07:08:58; End-Date: 2025-10-16 07:16:09
+Commandline: /usr/bin/unattended-upgrade ; Start-Date: 2025-10-16 07:16:15; End-Date: 2025-10-16 07:22:40
+Commandline: /usr/bin/unattended-upgrade ; Start-Date: 2025-10-16 07:22:46; End-Date: 2025-10-16 07:29:52
+Commandline: /usr/bin/unattended-upgrade ; Start-Date: 2025-10-16 07:30:07; End-Date: 2025-10-16 07:31:55
+Commandline: /usr/bin/unattended-upgrade ; Start-Date: 2025-10-16 07:32:01; End-Date: 2025-10-16 07:32:40
+Commandline: /usr/bin/unattended-upgrade ; Start-Date: 2025-10-16 07:32:45; End-Date: 2025-10-16 07:33:44
+Commandline: /usr/bin/unattended-upgrade ; Start-Date: 2025-10-16 07:34:01; End-Date: 2025-10-16 07:38:58
+Commandline: /usr/bin/unattended-upgrade ; Start-Date: 2025-10-16 07:39:11; End-Date: 2025-10-16 07:43:42
+Commandline: /usr/bin/unattended-upgrade ; Start-Date: 2025-10-16 07:43:56; End-Date: 2025-10-16 07:50:50
+Commandline: /usr/bin/unattended-upgrade ; Start-Date: 2025-10-16 07:51:06; End-Date: 2025-10-16 07:52:15
+Commandline: /usr/bin/unattended-upgrade ; Start-Date: 2025-10-16 07:52:21; End-Date: 2025-10-16 07:53:07
+Commandline: /usr/bin/unattended-upgrade ; Start-Date: 2025-10-16 07:53:21; End-Date: 2025-10-16 07:54:46
+Commandline: /usr/bin/unattended-upgrade ; Start-Date: 2025-10-16 07:54:56; End-Date: 2025-10-16 07:57:03
+Commandline: /usr/bin/unattended-upgrade ; Start-Date: 2025-10-16 07:57:15; End-Date: 2025-10-16 07:58:21
+Commandline: /usr/bin/unattended-upgrade ; Start-Date: 2025-10-16 07:58:27; End-Date: 2025-10-16 08:00:15
+Commandline: /usr/bin/unattended-upgrade ; Start-Date: 2025-10-16 08:00:19; End-Date: 2025-10-16 08:01:16
+Commandline: /usr/bin/unattended-upgrade ; Start-Date: 2025-10-16 08:01:31; End-Date: 2025-10-16 08:04:13
+Commandline: /usr/bin/unattended-upgrade ; Start-Date: 2025-10-16 08:04:22; End-Date: 2025-10-16 08:06:33
+Commandline: /usr/bin/unattended-upgrade ; Start-Date: 2025-10-16 08:06:37; End-Date: 2025-10-16 08:07:34
+Commandline: /usr/bin/unattended-upgrade ; Start-Date: 2025-10-16 08:07:39; End-Date: 2025-10-16 08:08:23
+Commandline: /usr/bin/unattended-upgrade ; Start-Date: 2025-10-16 08:08:28; End-Date: 2025-10-16 08:09:22
+Commandline: /usr/bin/unattended-upgrade ; Start-Date: 2025-10-16 08:09:33; End-Date: 2025-10-16 08:11:28
+Commandline: /usr/bin/unattended-upgrade ; Start-Date: 2025-10-16 08:11:32; End-Date: 2025-10-16 08:12:07
+Commandline: /usr/bin/unattended-upgrade ; Start-Date: 2025-10-16 08:12:12; End-Date: 2025-10-16 08:13:48
+Commandline: /usr/bin/unattended-upgrade ; Start-Date: 2025-10-16 08:13:53; End-Date: 2025-10-16 08:15:06
+Commandline: /usr/bin/unattended-upgrade ; Start-Date: 2025-10-16 08:15:15; End-Date: 2025-10-16 08:18:40
+Commandline: /usr/bin/unattended-upgrade ; Start-Date: 2025-10-16 08:18:54; End-Date: 2025-10-16 08:21:04
+Commandline: /usr/bin/unattended-upgrade ; Start-Date: 2025-10-16 08:21:11; End-Date: 2025-10-16 08:27:28
+Commandline: /usr/bin/unattended-upgrade ; Start-Date: 2025-10-16 08:27:37; End-Date: 2025-10-16 08:28:09
+Commandline: /usr/bin/unattended-upgrade ; Start-Date: 2025-10-16 08:28:14; End-Date: 2025-10-16 08:29:19
+Commandline: apt install bzip2 ; Start-Date: 2025-10-19 07:07:32; End-Date: 2025-10-19 07:07:37
